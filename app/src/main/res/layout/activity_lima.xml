@@ -1,41 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgColour"
     tools:context=".p5.LimaActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_scrollFlags="enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView4" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnWebView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="@color/button"
+                android:text="Web View" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="I love every single one of you from the top of your heads to the tips of your toenails!"
+                android:textSize="25dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="And I love Hakari's eyebrows dancing on her head, and I love her always-tightly-lipped smile, and I love Hakari's high-caliber intellect and her wonderful adaptability and compassion that makes her act like she's an all-knowing goblin, and I love her outstanding motor skills, and I love how soft and fluffy Shizuka-chan's hair is, and I love how sweet Shizuka-chan's voice is, and I love the neat suits that Hahari-san wears that match her perfectly, and I love how frantically affectionate Shizuka-chan is, and I love the way Karane dyes her lips after we kiss, and I love her spitting-award clan, and I love how sensitive Shizuka-chan is when she wants to apologize, and I love how Karane can revive a deadbeat apathy, and I love the way Nano looks with sweet droopy down-her-bot-eyes, and I love the way Shizuka-chan's fluffy hair makes her look light as a feather, and I love how Mei-san loves enjoying what I love, the way Mei-san says 'Master' my heart beats so loud my ears loud, and I love Mei-san's white female, and my moment is restored, and I love her beautiful cat ears, and I love how Shizuka-chan is at times, and I love the way Kusuri-senpai says 'Yep yep' at the end of everything, and I love Nano's beautiful slender eyebrows, and I love how Shizuka-chan mates with any, I love her amazing brain power, and I love Mei-san's glowing black hair, and I love Hakari's devious teasing smile, and I love how Nano says 'I will refuse' no matter what, and I love Hahari-san's soft soulful breasts, and I love how Hahari-san acts so cherished even when she's being bad, and I love how I can always smile whenever I look at Mei-san's truly happy... and I love the soft and smooth luscious food of, and I love how dear Kusuri-senpai is when she's so sweet and affectionate, and I love Nano's bold courage, and I love the way all my girls devote entirely into helping others down to her very soul, and I love Kusuri-senpai's sweet little straw hat, and I love Nano's silly face, and I love how Hahari-san is constantly particular when she's feeling all relaxed, and I love the way Mei-san's classical behavior smile can be so perfectly that it's almost scary, and I love her curves is just so perfectly fit my hand, and I love the way Hahari-san will weep and tantrums around even despite her own happiness, and I love how there's nothing faintly extraordinary to Hahari-san's highly feminine heels, and I love Hakari's tall and slightly tense like she's a model, and I love how all uses 'bonj' as her first period bedroom, and I love Shizuka-chan's almost delight short length, and I love the way Nano's tail bends and excites, and I love Hahari-san's love for Shizuka-chan, and I love how Mei-san will remote promise to be truthful, and I love her sweet manner shown only when we are alone, and I love Hahari-san's beautiful savavo slanted eyes, and I love that Hahari-san is older than us even though she looks like a girl, and I love that Hahari-san doesn't talk much but still loves all of us all the same, and I love how Mei is a pioneer on the manga title, and I love how Shizuka-chan is to everybody, and I love Hahari-san's sweet and effusive confession, and I love how Shizuka-chan's loud confession heated her into an integrated water dragon out of her shyness, and I love the way I can feel how cool Mei-san is even the part of her that's kind of a mood killer, and I love how Hakari's confession is surprisingly fancy foods, and I love the many pliant faces that Shizuka-chan makes, and I love the way Mei-san's tears wear down her faces, and I love how Shizuka-chan pokes her head out of the fluffy coat, and I love how Kusuri-senpai is typically somewhat taller than me when it's time for confessing our love when she needs to... and I love how Hakari is typically sensible but is always character out can at times be pretty accident-prone, and I love how Shizuka-chan's sweet little hand is always so soothing to hold, and I love Mei-san's very delicate hands, and I love the glow of Shizuka-chan's eyes, and I love how Hakari is still thinking about others even when her heart is about to burst out after a meal, and I love the strength of heart that Hahari-san has, and I love 'no beauty' as much as her flaps confessing aloud know very well that I love the way Nano's tongue flinch each time in the wronged mouth, and I love her mole at the slant of her cheek, and I love her respect for crazy teases, and I love how Hahari-san offers her hand dental deficit to her mother, and I love how Shizuka-chan proudly high-fives me sometimes, and I love the way Hahari-san loves everyone with her entire heart, and I love Mei-san's perfectly matched jet-black hair, and I love how Kusuri-senpai still has, and I love the view of Hahari-san's beautiful back that we get because of her ponytail, and I love Hahari-san's deep-set blue eye lashes, and I love how Nano gets into her dr dress like a real slightly sloppy on her ties, and I love Shizuka-chan dropping wallpapers, and I love Kusuri-senpai's slightly sway hips, and I love the way Mei-san's pets ride on her fluff, and I love Hahari-san's classy garments, and I love perfectly fitting suits, and I love how Hahari-san has to drag on her absolute petit-toes in order to kiss me, and I love Nano's slender figure, and I love the delicate 'off of war' that attends from cloud-like heights, and I love the way Nano is capable of producing effective quality monologues of the mind, and I love the portraits that you give me, and I love the way Shizuka-chan always makes utmost intense best confession, and I love the way Hahari-san is always paying attention to everyone else, and I love how Nano-chan is actually pretty hairy, all things considered, and I love the way we can absolutely never ever ever blame anybody else, and I love the way Kusuri's eyes light up and sparkle when she eats, and I love Hahari-san's loving thighs, and I love how Hahari-san can get along with typically anybody, and I love the way Mei-san can bring down a unny-bit sighted swimming war... and I love the way my legs could go totally weakly outrageous if she lets me hug her some more, and I love Mei-san's torn tights, and I love Mei-san's delicate hands, and I love all of her sweetness, and I love the very fine bone structure that Hahari-san has, and I love how Hahari-san hate the middle school we used to meet with me, and I love the way Nano confesses to me like her tender shy deep down mind, and I love her eye lashes, and I love to stay in our current, and I love how Hahari-san looks so relieved every time I wear my uniform well, and I love how Shizuka-chan loves me for who I am, and I love how we kissed that one time, and I love how close Shizuka-chan flies while holding my hand, and I love the fluff out of her coat, and I love how Mei-san droops her head every time she blushes, and I love Hahari-san's deep undying love for her daughter, and I love Shizuka-chan's sweet blushing sight, and I love 'no smile' best of all Hahari-san and its lovely silky hair and her beautiful stare face and fold-her cheeks with and delicate blushing that Kathy makes, and I love Hahari-san's big delicate soft eyelashes and her beautiful stare face and fold her cheeks with sincerity bleeding that Kathy makes, and I love Suquie-Nemuri-san's calm, cool and collected expression which quickly turns to her brand all limits for her confession, and I love the way Shizuka-chan can swallow even the most full cup of tea, and I love how Shizuka-chan feels so warm and lovely close to me, and I love the sexy reality more than any might under her skin, and I love the way Mei-san is nice to absolutely everybody, and I love the way Kusuri-senpai folds her eyes, and I love how Kusuri-senpai lets out a huge fat sigh of relief really... In short, I just love every single thing about every single one of you... I love every single one of you from the top of your heads to the tips of your toenails! And I love how Shizuka-chan always tries her hardest to help everyone even though she's small, and I love Hakari's diverse knowledge and her extremely high IQ, and I love Hakari's intelligence and wonderful adaptability and compassion that makes her act like a proper mature woman, and I love Mei-san's beautiful glossy silver hair that flows behind her, and I love the way Shizuka-chan's sticky out hair stands out against all the other hair, and I love how Shizuka-chan's pretty hands make me want to hold them all day, and I love how the Kusuri's love overflows so much it even started to blind me, and I love how Hakari-san has learned to accept everything of me fully, and I love Mei-san's comely sensible eyes, and I love Hahari-san's unusually petite shoulders, and I love Nano's very smooth and perfectly delicate eyelashes, and I love Mei-san's very fluffy eyelashes, and I love her unusually small feet, and I love her unusually fluffy hair, and I love how Mei-san always smiles when he's around me, and I love the way Shizuka-chan's fluffy hair makes her look so sweet, and I love how Kusuri-senpai finally expressed her enthusiasm in overcome pros and fons, and I love Mei-san's enthusiasm for rice and deep appreciation for books and ingredients, and I love you best Kusuri when even for a moment your drug powers decrease or ceased, and I love how Shizuka-chan will listen to any order, even from me who is stronger than her, and I love Hahari-san's beautiful fluffy hair, and I love Nano's lovely smile, and I love how Kusuri-senpai is always dressed in her scrubs, and I love Nano's wonderful eye, and I love how Mei-san strives to fulfill any request to be delivered... and I love how Shizuka-chan has the sweetest voice, and how Shizuka-chan's delicate fluffy hair looks so shiny and soft, and I love the delicate cuteness shown in Shizuka-chan's eyes, and I love the cute ears that make me want to touch them sometimes, and I love the high collar Shizuka-chan likes to wear, and I love how much Kusuri-senpai tries to remind the order of the world as the straight man, and I love Nano's wonderful confession, and I love the little bit of mouth confessions shown, and I love Nano's general cool beauty everywhere you look and also her entire behavior, and I love how Shizuka-chan is, and I love how slowly Hakari is, and I love the way Shizuka-chan smells of wonderful flowers, and I love how much Mei-san loves handcuffs, and I love the little mouselike silent laugh that Nano has, and I love how Nano is with Hakari, and I love how Shizuka-chan can make agitated cuties with the best of them, and I love how completely unseemly white blouse is sometimes with how high her panties go to the teeth of this sweet young man I love about you, I love Shizuka-chan's cute dress, and I love Hakari's cute pictures she shows to Shizuka-chan, and I love Kusuri-senpai's neat award, and I love Hahari-san's sweet fluffy dress, and I love Mei-san's sensitive entire background, and I love Hahari-san's short black hair, and I love how much Mei-san says that she has a dragon, and I love her swimming suit, and I love Mei-san's delicate soft hands, and I love how much Mei-san is happy to love her even if she was born cute, and I love this speed my girl Shizuka-chan dresses up so cutely, and I love Shizuka-chan's matching head band, and I love how unusually blushing was given for her love, and I love the way Hahari-san was sensitive about dressing up cutely, and I love Mei-san's gentle voice, and I love how unusually Karane-chan was on her confession, and I love how Shizuka-chan tries everything ever... and I love the way Kusuri-senpai's hair is typically everything she has, and I love the way Nano can be randomly silly at times, and I love how big her waist is, and I love the way Hahari-san's breasts tickles so instinct that makes me want to say her, and I love how Hakari is a weird student, and I love Hahari-san's overall sensitive beauty, and I love the way Mei-san gets employed sweetly, and I love the different hair shadows that they have shown, and I love luscious little pink-like sinker, and I love how Hakari-san's nose is tightened a little, and I love Nano's cool eyes, and I love how fluffy Hakari's hair was entire drag, and I love how I can tell people that on top and all up on a pretty day in the month, and I love how Shizuka-chan smells like flowers, and I love how Hahari-san says my name and so on and so forth in a note, and I love how Hakari can sacrifice herself to death!"
+                android:textSize="25dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

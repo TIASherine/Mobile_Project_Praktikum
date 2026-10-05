@@ -3,7 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="button">#747B4F</color>
-    <color name="bg">#F4F5F7</color>
+    <color name="cardBg">#F4F5F7</color>
     <color name="bgColour">#FDFEF0</color>
     <color name="loginText">#FFFFFF</color>
     <color name="textColour">#5E3A42</color>

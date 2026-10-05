@@ -1,7 +1,10 @@
 package com.example.Projek_Sherine.p5
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.ActivityLimaBinding
 import com.example.Projek_Sherine.databinding.ActivityMainBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class LimaActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLimaBinding
@@ -34,6 +38,19 @@ class LimaActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
 //            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
+
+        binding.btnWebView.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Web View Page")
+                .setMessage("Go See Web View?")
+                .setNegativeButton("No", null)
+                .setPositiveButton("Yeah") { dialog, _ ->
+                    val intent = Intent(this, WebViewActivity::class.java)
+                    startActivity(intent)
+
+                    dialog.dismiss()
+                }.setCancelable(false).show()
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -43,7 +60,22 @@ class LimaActivity : AppCompatActivity() {
                 true
             }
 
+            R.id.action_search -> {
+                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            R.id.action_settings -> {
+                Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
     }
 }
