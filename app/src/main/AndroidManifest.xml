@@ -25,9 +25,12 @@
             android:name=".MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".DetailActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".p5.LimaActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

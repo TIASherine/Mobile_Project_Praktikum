@@ -8,8 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.ActivityMainBinding
+import com.example.Projek_Sherine.p5.LimaActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -40,6 +40,19 @@ class MainActivity : AppCompatActivity() {
                 .setNegativeButton("No", null)
                 .setPositiveButton("Yeah") { dialog, _ ->
                     val intent = Intent(this, DetailActivity::class.java)
+                    startActivity(intent)
+
+                    dialog.dismiss()
+                }.setCancelable(false).show()
+        }
+
+        binding.btnP5.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Lima Page")
+                .setMessage("Go See Lima?")
+                .setNegativeButton("No", null)
+                .setPositiveButton("Yeah") { dialog, _ ->
+                    val intent = Intent(this, LimaActivity::class.java)
                     startActivity(intent)
 
                     dialog.dismiss()
