@@ -36,7 +36,7 @@ class LimaActivity : AppCompatActivity() {
             subtitle = "Ini adalah subtitle"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
-//            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
         binding.btnWebView.setOnClickListener {
