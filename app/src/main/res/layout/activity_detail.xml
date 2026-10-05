@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="376dp"
+        android:layout_height="595dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="428dp"
+        android:rotation="-249"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/one" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/godofwar"
+        android:text="Log Out"
+        app:backgroundTint="@color/button"
+        app:cornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewDetail"
+        app:strokeColor="#E8D2E3"
+        app:strokeWidth="1dp" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/cinzel_bold"
+        android:text="DailyFit"
+        android:textAlignment="center"
+        android:textColor="#5E3A42"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Your Daily Healthy Tips"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:fontFamily="@font/cinzel_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/bg"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/desc">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="25dp"
+            android:text="@string/projectTitle"
+            android:textColor="#6E586A"
+            android:justificationMode="inter_word"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="17sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="425dp"
+        android:layout_height="106dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="640dp"
+        android:outlineAmbientShadowColor="#161414"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/detail" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="278dp"
+        android:layout_height="562dp"
+        android:layout_marginTop="212dp"
+        android:layout_marginEnd="268dp"
+        android:rotation="64"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/one" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="278dp"
+        android:layout_height="562dp"
+        android:layout_marginEnd="220dp"
+        android:layout_marginBottom="448dp"
+        android:rotation="-80"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/one" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="278dp"
+        android:layout_height="572dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginBottom="288dp"
+        android:rotation="111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/one" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

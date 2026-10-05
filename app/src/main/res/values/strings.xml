@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Projek_Sherine</string>
+    <string name="title"> Login Page </string>
+    <string name="register"> <u> Register </u> </string>
+    <string name="projectTitle">DailyFit adalah aplikasi yang menyediakan berbagai artikel dan panduan praktis seputar gaya hidup sehat dalam kehidupan sehari-hari. \n\nAplikasi ini membantu pengguna memahami kebiasaan sederhana yang dapat diterapkan secara rutin, mulai dari menjaga pola makan, aktivitas fisik, waktu istirahat, hingga tips menjaga kesehatan dan kebugaran.</string>
+</resources>
