@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -30,25 +31,39 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
+        // Kode ini harus selalu dipanggil saat butuh akses "user_pref"
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+        // Kondisi jika isLogin bernilai true
+        val isLogin = sharedPref.getBoolean("isLogin", false)
+        if (isLogin) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+            return
+        }
+
         binding.btnLogin.setOnClickListener {
             val user = binding.edtUsername.text.toString()
             val pass = binding.edtPassword.text.toString()
 
-            if (user.isBlank() || pass.isBlank()) {
-                Log.d("Unsuccessful Input", "Username or Password is empty!")
-                Toast.makeText(this, "Username or Password is empty!", Toast.LENGTH_LONG - 2).show()
-            } else {
-                val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("Username", user)
-                intent.putExtra("Password", pass)
-
-                Log.d("Successful Input", "Username: $user Password: $pass")
-
+            if (user.isNotEmpty() && user == pass) {
                 if (binding.switchRememberMe.isChecked) {
+                    val editor = sharedPref.edit()
+                    editor.putBoolean("isLogin", true)
+                    editor.putString("username", user)
+                    editor.apply()
+
                     Toast.makeText(this, "We'll Remember You :]", Toast.LENGTH_LONG).show()
                 }
 
-                startActivity(intent)
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            } else {
+                AlertDialog.Builder(this)
+                    .setTitle("Login Failed")
+                    .setMessage("Please Try Again")
+                    .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+                    .show()
             }
         }
     }

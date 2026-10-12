@@ -26,17 +26,8 @@ class DetailActivity : AppCompatActivity() {
             insets
         }
 
-        binding.btnLogOut.setOnClickListener {
-            MaterialAlertDialogBuilder(this)
-                .setTitle("Log Out")
-                .setMessage("Back To Login?")
-                .setNegativeButton("No", null)
-                .setPositiveButton("Yeah") { dialog, _ ->
-                    val intent = Intent(this, LoginActivity::class.java)
-                    startActivity(intent)
-
-                    dialog.dismiss()
-                }.setCancelable(false).show()
+        binding.btnBack.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
         }
     }
 }

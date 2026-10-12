@@ -9,52 +9,26 @@
     tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg_img" />
-
-    <ImageView
         android:id="@+id/imageView"
-        android:layout_width="113dp"
-        android:layout_height="81dp"
-        android:layout_marginTop="108dp"
+        android:layout_width="189dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="9dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@drawable/user" />
+        app:layout_constraintTop_toBottomOf="@+id/head"
+        app:srcCompat="@drawable/logo_daily_fit" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/cinzel_bold"
-        android:text="LOGIN PAGE"
-        android:textColor="@color/textColour"
+        android:fontFamily="@font/nunito_bold"
+        android:text="@string/tagline"
+        android:textColor="@color/blue"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/cinzel_bold"
-        android:text="@string/title"
-        android:textColor="@color/textColour"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -65,7 +39,7 @@
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/cardBg"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="5dp"
         app:cardElevation="6dp"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,25 +52,79 @@
             android:paddingHorizontal="20dp"
             android:paddingVertical="20dp">
 
-            <EditText
-                android:id="@+id/edtUsername"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:ems="10"
-                android:fontFamily="@font/godofwar"
-                android:hint="Username"
-                android:inputType="text"
-                android:textColor="@color/textColour"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
+            <TextView
+                android:id="@+id/txtUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_medium"
+                android:text="Masukkan Username"
+                android:textColor="@color/blue"
+                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewInputUsername"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/bgColour"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtUsername">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/user_img"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/avatar"
+                        app:tint="@color/blue" />
+
+                    <EditText
+                        android:id="@+id/edtUsername"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:ems="10"
+                        android:fontFamily="@font/godofwar"
+                        android:hint="Username"
+                        android:inputType="text"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/user_img"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/user_img"
+                        app:layout_constraintTop_toTopOf="@+id/user_img" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/txtPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/nunito_medium"
+                android:text="Masukkan Password"
+                android:textColor="@color/blue"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewInputUsername" />
 
             <EditText
                 android:id="@+id/edtPassword"
                 android:layout_width="0dp"
                 android:layout_height="45dp"
-                android:layout_marginTop="12dp"
                 android:ems="10"
                 android:fontFamily="@font/godofwar"
                 android:hint="Password"
@@ -105,7 +133,7 @@
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtUsername" />
+                app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
 
             <Switch
                 android:id="@+id/switchRememberMe"
@@ -128,7 +156,6 @@
                 app:layout_constraintBottom_toBottomOf="@+id/switchRememberMe"
                 app:layout_constraintStart_toEndOf="@+id/switchRememberMe"
                 app:layout_constraintTop_toTopOf="@+id/switchRememberMe" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -162,5 +189,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/sora_bold"
+        android:text="- LOGIN -"
+        android:textColor="@color/blue"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="555dp"
+        android:layout_height="169dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/line"
+        app:tint="@color/blue" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

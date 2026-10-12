@@ -3,12 +3,14 @@ package com.example.Projek_Sherine
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.ActivityMainBinding
 import com.example.Projek_Sherine.p5.LimaActivity
+import com.example.Projek_Sherine.p6.EnamActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
@@ -26,6 +28,8 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
         val displayUser = intent.getStringExtra("Username")
         val displayPass = intent.getStringExtra("Password")
@@ -57,6 +61,35 @@ class MainActivity : AppCompatActivity() {
 
                     dialog.dismiss()
                 }.setCancelable(false).show()
+        }
+
+        binding.btnP6.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Enam Page")
+                .setMessage("Go See Enam?")
+                .setNegativeButton("No", null)
+                .setPositiveButton("Yeah") { dialog, _ ->
+                    val intent = Intent(this, EnamActivity::class.java)
+                    startActivity(intent)
+
+                    dialog.dismiss()
+                }.setCancelable(false).show()
+        }
+
+        binding.btnLogOut.setOnClickListener {
+            AlertDialog.Builder(this)
+                .setTitle("Log Out")
+                .setMessage("Are You Sure?")
+                .setPositiveButton("Yeah") { dialog, _ ->
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+                    dialog.dismiss()
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    finish()
+                }
+                .setNegativeButton("No") { dialog, _ -> dialog.dismiss() }
+                .show()
         }
     }
 }
