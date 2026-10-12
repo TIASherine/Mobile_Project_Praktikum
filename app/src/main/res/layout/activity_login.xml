@@ -121,19 +121,51 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardViewInputUsername" />
 
-            <EditText
-                android:id="@+id/edtPassword"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewInputPassword"
                 android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:ems="10"
-                android:fontFamily="@font/godofwar"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:textColor="@color/textColour"
-                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/bgColour"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
+                app:layout_constraintTop_toBottomOf="@+id/txtPassword">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/user_pass"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/padlock"
+                        app:tint="@color/blue" />
+
+                    <EditText
+                        android:id="@+id/edtPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:ems="10"
+                        android:fontFamily="@font/godofwar"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:textColor="@color/textColour"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/user_pass"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/user_pass"
+                        app:layout_constraintTop_toTopOf="@+id/user_pass" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
 
             <Switch
                 android:id="@+id/switchRememberMe"
@@ -142,7 +174,7 @@
                 android:layout_marginTop="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+                app:layout_constraintTop_toBottomOf="@+id/cardViewInputPassword" />
 
             <TextView
                 android:id="@+id/textRememberMe"
