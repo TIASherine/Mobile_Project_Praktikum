@@ -8,19 +8,6 @@
     android:background="@color/bgColour"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/bg_img" />
-
     <TextView
         android:id="@+id/password"
         android:layout_width="wrap_content"
@@ -36,41 +23,30 @@
         app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:fontFamily="@font/cinzel_bold"
-        android:text="[ confidential ]"
-        android:textSize="35dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/cinzel_regular"
-        android:text="Username"
-        android:textSize="25dp"
+        android:fontFamily="@font/nunito_regular"
+        android:text="Siap mulai kebiasaan sehat hari ini?"
+        android:textSize="15dp"
+        android:textColor="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsername" />
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/txtFirst" />
 
     <TextView
-        android:id="@+id/txtUsername"
+        android:id="@+id/txtFirst"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:fontFamily="@font/cinzel_bold"
-        android:text="Username Information"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/nunito_regular"
+        android:text="placeholder"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtPassword"
@@ -160,5 +136,13 @@
         app:layout_constraintTop_toTopOf="@+id/btnDetail"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/arrow" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="50dp"
+        android:layout_height="55dp"
+        app:srcCompat="@drawable/user"
+        tools:layout_editor_absoluteX="11dp"
+        tools:layout_editor_absoluteY="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
