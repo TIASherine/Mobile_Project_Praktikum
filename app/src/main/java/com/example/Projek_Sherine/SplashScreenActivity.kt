@@ -25,9 +25,12 @@ class SplashScreenActivity : AppCompatActivity() {
         val isLogin = sharedPref.getBoolean("isLogin", false)
         if (isLogin) {
             startActivity(Intent(this, BaseActivity::class.java))
-            finish()
-            return
+        } else {
+            startActivity(Intent(this, LoginActivity::class.java))
+
         }
+        finish()
+        return
 
         lifecycleScope.launch {
             delay(2000)

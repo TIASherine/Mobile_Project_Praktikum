@@ -37,15 +37,16 @@ class LoginActivity : AppCompatActivity() {
             val user = binding.edtUsername.text.toString()
             val pass = binding.edtPassword.text.toString()
 
+            val editor = sharedPref.edit()
+            editor.putString("username", user)
+
             if (user.isNotEmpty() && pass.isNotEmpty()) {
                 if (binding.switchRememberMe.isChecked) {
-                    val editor = sharedPref.edit()
                     editor.putBoolean("isLogin", true)
-                    editor.putString("username", user)
-                    editor.apply()
-
                     Toast.makeText(this, "We'll Remember You :]", Toast.LENGTH_LONG).show()
                 }
+
+                editor.apply()
 
                 startActivity(Intent(this, BaseActivity::class.java))
                 intent.putExtra("Username", user)

@@ -30,6 +30,9 @@ class BaseActivity : AppCompatActivity() {
             insets
         }
 
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        val editor = sharedPref.edit()
+
         replaceFragment(HomeFragment())
         binding.bottomNavView.setOnItemSelectedListener {
             when (it.itemId) {
@@ -60,8 +63,11 @@ class BaseActivity : AppCompatActivity() {
 
                 R.id.action_profile -> {
                     Toast.makeText(this, "More Clicked", Toast.LENGTH_SHORT).show()
+                    editor.putBoolean("isLogin", false)
+                    editor.apply()
 
                     startActivity(Intent(this, LoginActivity::class.java))
+
                     finish()
                     true
                 }

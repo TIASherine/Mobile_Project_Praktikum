@@ -31,6 +31,8 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = "- Beranda -"
         (requireActivity() as AppCompatActivity).supportActionBar?.subtitle = "Stay Healthy, Feel Happy"
@@ -38,7 +40,7 @@ class HomeFragment : Fragment() {
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
 
         var displayUser = requireActivity().intent.getStringExtra("username")
-        binding.txtWelcome.setText("Apa kabar, " + displayUser +"?")
+        binding.txtWelcome.text = "Apa kabar, " + displayUser +"?"
 
         binding.btnDetail.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
@@ -95,6 +97,4 @@ class HomeFragment : Fragment() {
 //                .show()
 //        }
     }
-
-    private fun getSharedPreferences(string: String, modePrivate: Int) {}
 }
