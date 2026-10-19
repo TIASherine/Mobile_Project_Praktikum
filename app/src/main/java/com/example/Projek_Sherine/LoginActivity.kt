@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
             val user = binding.edtUsername.text.toString()
             val pass = binding.edtPassword.text.toString()
 
-            if (user.isNotEmpty() && user == pass) {
+            if (user.isNotEmpty() && pass.isNotEmpty()) {
                 if (binding.switchRememberMe.isChecked) {
                     val editor = sharedPref.edit()
                     editor.putBoolean("isLogin", true)
@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this, "We'll Remember You :]", Toast.LENGTH_LONG).show()
                 }
 
-                startActivity(Intent(this, MainActivity::class.java))
+                startActivity(Intent(this, BaseActivity::class.java))
                 finish()
             } else {
                 AlertDialog.Builder(this)
