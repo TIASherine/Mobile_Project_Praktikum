@@ -32,7 +32,7 @@ class EnamActivity : AppCompatActivity() {
             subtitle = "Ini adalah subtitle"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+            setHomeAsUpIndicator(R.drawable.outline_arrow_back)
         }
 
         binding.btnFragment1.setOnClickListener { replaceFragment(SatuFragment()) }

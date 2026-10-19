@@ -36,7 +36,7 @@ class WebViewActivity : AppCompatActivity() {
             title = "Webtoon Lokal"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
+            setHomeAsUpIndicator(R.drawable.outline_arrow_back)
         }
 
         binding.webView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->

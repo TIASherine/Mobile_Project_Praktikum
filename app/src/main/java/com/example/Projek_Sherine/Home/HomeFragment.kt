@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.example.Projek_Sherine.DetailActivity
 import com.example.Projek_Sherine.Home.p5.LimaActivity
 import com.example.Projek_Sherine.Home.p6.EnamActivity
@@ -30,6 +31,10 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "- Beranda -"
+        (requireActivity() as AppCompatActivity).supportActionBar?.subtitle = "Stay Healthy, Feel Happy"
+
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
 
         val displayUser = requireActivity().intent.getStringExtra("username")

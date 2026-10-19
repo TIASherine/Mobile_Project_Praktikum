@@ -12,4 +12,12 @@
         android:id="@+id/action_more"
         android:icon="@drawable/article"
         android:title="More" />
+    <item
+        android:id="@+id/action_bookmark"
+        android:icon="@drawable/bookmark"
+        android:title="Bookmark" />
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/avatar"
+        android:title="Profile" />
 </menu>

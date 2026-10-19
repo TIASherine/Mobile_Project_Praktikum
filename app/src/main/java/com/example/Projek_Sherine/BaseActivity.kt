@@ -33,20 +33,33 @@ class BaseActivity : AppCompatActivity() {
         replaceFragment(HomeFragment())
         binding.bottomNavView.setOnItemSelectedListener {
             when (it.itemId) {
+                android.R.id.home -> {
+                    onBackPressedDispatcher.onBackPressed()
+                    true
+                }
+
                 R.id.action_home -> {
                     replaceFragment(HomeFragment())
                     true
                 }
 
                 R.id.action_message -> {
-                    Toast.makeText(this, "Message Clicked", Toast.LENGTH_SHORT).show()
                     replaceFragment(MessageFragment())
                     true
                 }
 
                 R.id.action_more -> {
-                    Toast.makeText(this, "More Clicked", Toast.LENGTH_SHORT).show()
                     replaceFragment(MoreFragment())
+                    true
+                }
+
+                R.id.action_bookmark -> {
+                    Toast.makeText(this, "More Clicked", Toast.LENGTH_SHORT).show()
+                    true
+                }
+
+                R.id.action_profile -> {
+                    Toast.makeText(this, "More Clicked", Toast.LENGTH_SHORT).show()
                     true
                 }
 
