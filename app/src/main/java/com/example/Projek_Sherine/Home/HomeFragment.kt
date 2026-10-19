@@ -39,8 +39,8 @@ class HomeFragment : Fragment() {
 
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
 
-        var displayUser = requireActivity().intent.getStringExtra("username")
-        binding.txtWelcome.text = "Apa kabar, " + displayUser +"?"
+        val displayUser = sharedPref.getString("username", "Sherine")
+        binding.txtWelcome.text = "Apa kabar, $displayUser?"
 
         binding.btnDetail.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())

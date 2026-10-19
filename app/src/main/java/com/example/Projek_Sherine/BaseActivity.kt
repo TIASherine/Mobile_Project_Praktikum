@@ -62,7 +62,8 @@ class BaseActivity : AppCompatActivity() {
                 }
 
                 R.id.action_profile -> {
-                    Toast.makeText(this, "More Clicked", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Profile Clicked", Toast.LENGTH_SHORT).show()
+
                     editor.putBoolean("isLogin", false)
                     editor.apply()
 
