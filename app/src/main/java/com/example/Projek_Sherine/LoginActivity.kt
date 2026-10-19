@@ -48,6 +48,7 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 startActivity(Intent(this, BaseActivity::class.java))
+                intent.putExtra("Username", user)
                 finish()
             } else {
                 AlertDialog.Builder(this)

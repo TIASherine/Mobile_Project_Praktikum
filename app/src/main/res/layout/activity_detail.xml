@@ -71,7 +71,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_medium"
+            android:fontFamily="@font/nunito_medium"
             android:justificationMode="inter_word"
             android:padding="25dp"
             android:text="@string/about"

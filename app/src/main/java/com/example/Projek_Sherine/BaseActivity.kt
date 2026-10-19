@@ -60,6 +60,9 @@ class BaseActivity : AppCompatActivity() {
 
                 R.id.action_profile -> {
                     Toast.makeText(this, "More Clicked", Toast.LENGTH_SHORT).show()
+
+                    startActivity(Intent(this, LoginActivity::class.java))
+                    finish()
                     true
                 }
 
