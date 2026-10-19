@@ -1,24 +1,23 @@
-package com.example.Projek_Sherine.p5
+package com.example.Projek_Sherine.Home.p6
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.webkit.WebViewClient
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.example.Projek_Sherine.R
-import com.example.Projek_Sherine.databinding.ActivityMainBinding
-import com.example.Projek_Sherine.databinding.ActivityWebViewBinding
-import java.text.Bidi
+import com.example.Projek_Sherine.databinding.ActivityEnamBinding
 
-class WebViewActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityWebViewBinding
+class EnamActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityEnamBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityWebViewBinding.inflate(layoutInflater)
+        binding = ActivityEnamBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -27,25 +26,18 @@ class WebViewActivity : AppCompatActivity() {
             insets
         }
 
-        binding.webView.webViewClient = WebViewClient()
-        binding.webView.settings.javaScriptEnabled = true
-        binding.webView.loadUrl("https://www.webtoons.com/id/")
-
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Webtoon Lokal"
+            title = "Halaman Pertemuan 6"
+            subtitle = "Ini adalah subtitle"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
-        binding.webView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
-            if (scrollY > oldScrollY) {
-                binding.appBar.setExpanded(false, true) // sembunyikan
-            } else if (scrollY < oldScrollY) {
-                binding.appBar.setExpanded(true, true) // tampilkan
-            }
-        }
+        binding.btnFragment1.setOnClickListener { replaceFragment(SatuFragment()) }
+        binding.btnFragment2.setOnClickListener { replaceFragment(DuaFragment()) }
+        binding.btnFragment3.setOnClickListener { replaceFragment(TigaFragment()) }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -59,4 +51,10 @@ class WebViewActivity : AppCompatActivity() {
         }
     }
 
+    private fun replaceFragment(fragment: Fragment, addToBackStack: Boolean = true) {
+        val transaction = supportFragmentManager.beginTransaction()
+            .replace(binding.fragmentContainer.id, fragment)
+        if (addToBackStack) transaction.addToBackStack(null)
+        transaction.commit()
+    }
 }

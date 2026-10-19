@@ -2,13 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_search"
-        android:icon="@android:drawable/ic_menu_search"
-        android:title="Search"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_home"
         android:icon="@android:drawable/ic_menu_preferences"
-        android:title="Settings"
+        android:title="Home"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_articles"
+        android:title="Artikel"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_bookmark"
+        android:title="Bookmark"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_profile"
+        android:title="Profil"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_logout"
+        android:title="Log Out"
         app:showAsAction="never" />
 </menu>

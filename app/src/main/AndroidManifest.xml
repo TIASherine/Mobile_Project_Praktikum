@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sherine_TIA">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".BaseActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -32,15 +32,15 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".p5.LimaActivity"
+            android:name=".Home.p5.LimaActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".p5.WebViewActivity"
+            android:name=".Home.p5.WebViewActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".p6.EnamActivity"
+            android:name=".Home.p6.EnamActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity

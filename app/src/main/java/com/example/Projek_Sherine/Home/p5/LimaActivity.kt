@@ -1,4 +1,4 @@
-package com.example.Projek_Sherine.p5
+package com.example.Projek_Sherine.Home.p5
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,9 +9,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.Projek_Sherine.LoginActivity
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.ActivityLimaBinding
-import com.example.Projek_Sherine.databinding.ActivityMainBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class LimaActivity : AppCompatActivity() {
@@ -60,13 +60,29 @@ class LimaActivity : AppCompatActivity() {
                 true
             }
 
-            R.id.action_search -> {
-                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
+            R.id.action_home -> {
+                Toast.makeText(this, "Home Clicked", Toast.LENGTH_SHORT).show()
                 true
             }
 
-            R.id.action_settings -> {
-                Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
+            R.id.action_articles -> {
+                Toast.makeText(this, "Article Clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            R.id.action_bookmark -> {
+                Toast.makeText(this, "Bookmark Clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            R.id.action_profile -> {
+                Toast.makeText(this, "Profile Clicked", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            R.id.action_logout -> {
+                Toast.makeText(this, "Logout Clicked", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, LoginActivity::class.java))
                 true
             }
 
