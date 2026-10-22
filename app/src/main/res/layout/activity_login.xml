@@ -175,7 +175,7 @@
                         app:layout_constraintTop_toTopOf="@+id/user_pass" />
 
                     <ImageView
-                        android:id="@+id/user_pass3"
+                        android:id="@+id/user_seePass"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginEnd="8dp"

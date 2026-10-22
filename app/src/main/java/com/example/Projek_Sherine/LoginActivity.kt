@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.ActivityLoginBinding
 import kotlin.toString
+import android.text.InputType
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -32,6 +33,25 @@ class LoginActivity : AppCompatActivity() {
         }
 
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+        binding.userSeePass.setOnClickListener {
+
+            if (binding.edtPassword.inputType == InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD) {
+
+                // Show password
+                binding.edtPassword.inputType = InputType.TYPE_CLASS_TEXT
+                binding.userSeePass.setImageResource(R.drawable.open_eye)
+
+            } else {
+
+                // Hide password
+                binding.edtPassword.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                binding.userSeePass.setImageResource(R.drawable.close_eye)
+            }
+
+            binding.edtPassword.setSelection(binding.edtPassword.text.length)
+        }
 
         binding.btnLogin.setOnClickListener {
             val user = binding.edtUsername.text.toString()
