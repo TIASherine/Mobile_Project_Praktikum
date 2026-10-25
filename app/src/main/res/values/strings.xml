@@ -11,5 +11,9 @@
 
     <string name="txtRegister">Belum punya akun? \nKlik untuk <u>Register</u></string>
 
+    <string name="txtLogin">Sudah punya akun? \nKlik untuk <u>Login</u></string>
+
     <string name="txtKode"> <u>Kirim Ulang Kode</u></string>
+
+    <string name="descResep"> Inspirasi menu sehat. Lengkap dengan informasi gizi dan takaran bahan. </string>
 </resources>
