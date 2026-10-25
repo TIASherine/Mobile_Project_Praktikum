@@ -39,7 +39,7 @@ class HomeFragment : Fragment() {
         val displayUser = sharedPref.getString("username", "Sherine")
         binding.txtWelcome.text = "Apa kabar, $displayUser?"
 
-        binding.btnDetail.setOnClickListener {
+        binding.btnArticlesDetail.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Detail Page")
                 .setMessage("Go See The Detail?")
@@ -51,21 +51,5 @@ class HomeFragment : Fragment() {
                     dialog.dismiss()
                 }.setCancelable(false).show()
         }
-
-//        binding.btnLogOut.setOnClickListener {
-//            AlertDialog.Builder(requireContext())
-//                .setTitle("Log Out")
-//                .setMessage("Are You Sure?")
-//                .setPositiveButton("Yeah") { dialog, _ ->
-//                    val editor = sharedPref.edit()
-//                    editor.clear()
-//                    editor.apply()
-//                    dialog.dismiss()
-//                    startActivity(Intent(requireContext(), LoginActivity::class.java))
-//                    finish()
-//                }
-//                .setNegativeButton("No") { dialog, _ -> dialog.dismiss() }
-//                .show()
-//        }
     }
 }
