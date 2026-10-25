@@ -14,6 +14,7 @@ class MessageAdapter(
     context: Context,
     private val messages: List<MessageModel>
 ) : ArrayAdapter<MessageModel>(context, 0, messages) {
+
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val binding = ItemMessageBinding.inflate(LayoutInflater.from(context), parent, false)
         val view = binding.root

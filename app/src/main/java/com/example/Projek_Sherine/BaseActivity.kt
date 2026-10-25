@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.example.Projek_Sherine.Article.ArticleFragment
 import com.example.Projek_Sherine.Home.HomeFragment
 import com.example.Projek_Sherine.Message.MessageFragment
 import com.example.Projek_Sherine.More.MoreFragment
@@ -57,7 +58,7 @@ class BaseActivity : AppCompatActivity() {
                 }
 
                 R.id.action_bookmark -> {
-                    Toast.makeText(this, "More Clicked", Toast.LENGTH_SHORT).show()
+                    replaceFragment(ArticleFragment())
                     true
                 }
 
