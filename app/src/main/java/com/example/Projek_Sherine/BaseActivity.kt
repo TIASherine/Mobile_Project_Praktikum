@@ -82,4 +82,10 @@ class BaseActivity : AppCompatActivity() {
                 .replace(binding.fragmentContainer.id, fragment)
                 .commit()
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
 }

@@ -79,5 +79,9 @@ class LoginActivity : AppCompatActivity() {
                     .show()
             }
         }
+
+        binding.btnRegister.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
     }
 }

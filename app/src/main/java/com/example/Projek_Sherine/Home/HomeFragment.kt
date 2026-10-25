@@ -9,12 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.Projek_Sherine.DetailActivity
-import com.example.Projek_Sherine.Home.p5.LimaActivity
-import com.example.Projek_Sherine.Home.p6.EnamActivity
-import com.example.Projek_Sherine.LoginActivity
-import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+
 
 class HomeFragment : Fragment() {
 
@@ -49,32 +46,6 @@ class HomeFragment : Fragment() {
                 .setNegativeButton("No", null)
                 .setPositiveButton("Yeah") { dialog, _ ->
                     val intent = Intent(requireContext(), DetailActivity::class.java)
-                    startActivity(intent)
-
-                    dialog.dismiss()
-                }.setCancelable(false).show()
-        }
-
-        binding.btnP5.setOnClickListener {
-            MaterialAlertDialogBuilder(requireContext())
-                .setTitle("Lima Page")
-                .setMessage("Go See Lima?")
-                .setNegativeButton("No", null)
-                .setPositiveButton("Yeah") { dialog, _ ->
-                    val intent = Intent(requireContext(), LimaActivity::class.java)
-                    startActivity(intent)
-
-                    dialog.dismiss()
-                }.setCancelable(false).show()
-        }
-
-        binding.btnP6.setOnClickListener {
-            MaterialAlertDialogBuilder(requireContext())
-                .setTitle("Enam Page")
-                .setMessage("Go See Enam?")
-                .setNegativeButton("No", null)
-                .setPositiveButton("Yeah") { dialog, _ ->
-                    val intent = Intent(requireContext(), EnamActivity::class.java)
                     startActivity(intent)
 
                     dialog.dismiss()

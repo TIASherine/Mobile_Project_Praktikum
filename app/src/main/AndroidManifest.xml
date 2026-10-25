@@ -24,23 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
             android:name=".DetailActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".Home.p5.LimaActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".Home.p5.WebViewActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".Home.p6.EnamActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -53,6 +37,10 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Message.MessageActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".RegisterActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

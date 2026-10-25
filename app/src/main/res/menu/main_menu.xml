@@ -2,24 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_home"
-        android:icon="@android:drawable/ic_menu_preferences"
-        android:title="Home"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_articles"
-        android:title="Artikel"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_bookmark"
-        android:title="Bookmark"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_profile"
-        android:title="Profil"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_logout"
-        android:title="Log Out"
-        app:showAsAction="never" />
-</menu>
+        android:id="@+id/title_logo"
+        android:icon="@drawable/logo_daily_fit"
+        android:title="Logo"
+        app:showAsAction="always" />
+    </menu>
