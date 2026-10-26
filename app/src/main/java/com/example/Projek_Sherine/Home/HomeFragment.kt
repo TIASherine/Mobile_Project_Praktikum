@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.Projek_Sherine.DetailActivity
+import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -38,6 +40,14 @@ class HomeFragment : Fragment() {
 
         val displayUser = sharedPref.getString("username", "Sherine")
         binding.txtWelcome.text = "Apa kabar, $displayUser?"
+
+        Glide.with(this)
+            .load(R.drawable.article1)
+            .into(binding.imgArtikel1)
+
+        Glide.with(this)
+            .load(R.drawable.article2)
+            .into(binding.imgArtikel2)
 
         binding.btnArticlesDetail.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())

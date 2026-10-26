@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.ActivityDetailBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
