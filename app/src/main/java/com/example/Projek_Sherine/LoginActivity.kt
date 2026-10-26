@@ -2,19 +2,14 @@ package com.example.Projek_Sherine
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
+import android.text.InputType
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.ActivityLoginBinding
-import kotlin.toString
-import android.text.InputType
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -80,8 +75,11 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        binding.txtPassword
+
         binding.btnRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
+
     }
 }

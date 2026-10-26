@@ -33,8 +33,8 @@ class EnamActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.outline_arrow_back)
         }
-        replaceFragment(SatuFragment(), addToBackStack = false)
 
+        replaceFragment(SatuFragment())
         binding.btnFragment1.setOnClickListener {
             replaceFragment(SatuFragment())
         }

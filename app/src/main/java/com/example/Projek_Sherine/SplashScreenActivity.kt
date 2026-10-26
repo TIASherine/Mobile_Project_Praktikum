@@ -20,22 +20,20 @@ class SplashScreenActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-
-        val isLogin = sharedPref.getBoolean("isLogin", false)
-        if (isLogin) {
-            startActivity(Intent(this, BaseActivity::class.java))
-        } else {
-            startActivity(Intent(this, LoginActivity::class.java))
-        }
-        finish()
-        return
 
         lifecycleScope.launch {
-            delay(2000)
-            val intent = Intent(this@SplashScreenActivity, TutorialScreenActivity::class.java)
-            startActivity(intent)
-            finish()
+            delay(2000) // Displays the splash screen for 2 seconds
+
+            val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+            val isLogin = sharedPref.getBoolean("isLogin", false)
+
+            if (isLogin) {
+                startActivity(Intent(this@SplashScreenActivity, BaseActivity::class.java))
+            } else {
+                startActivity(Intent(this@SplashScreenActivity, TutorialScreenActivity::class.java))
+            }
+
+            finish() // Safely close the splash screen activity from memory
         }
     }
 }

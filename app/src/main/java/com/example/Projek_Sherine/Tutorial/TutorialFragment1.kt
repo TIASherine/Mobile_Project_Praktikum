@@ -5,16 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.Projek_Sherine.R
+import com.example.Projek_Sherine.databinding.FragmentTutorialBinding
 
 class TutorialFragment1 : Fragment() {
+    private var _binding: FragmentTutorialBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // 1. Tampilkan layout fragmentnya
-        val view = inflater.inflate(R.layout.fragment_tutorial, container, false)
-        return view
+        // Inflate the layout for this fragment
+        _binding = FragmentTutorialBinding.inflate(inflater, container, false)
+        return binding.root
     }
 }

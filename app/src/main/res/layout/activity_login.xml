@@ -216,17 +216,17 @@
                 app:layout_constraintTop_toTopOf="@+id/switchRememberMe" />
 
             <TextView
-                android:id="@+id/textRememberMe2"
-                android:layout_width="wrap_content"
+                android:id="@+id/txtForgotPass"
+                android:layout_width="125dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="68dp"
+                android:layout_marginEnd="4dp"
                 android:fontFamily="@font/nunito_regular"
                 android:text="@string/forgotPassword"
+                android:textAlignment="center"
                 android:textColor="@color/blue"
                 android:textSize="15sp"
-                android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="@+id/textRememberMe"
-                app:layout_constraintStart_toEndOf="@+id/textRememberMe"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardViewInputPassword"
                 app:layout_constraintVertical_bias="1.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
