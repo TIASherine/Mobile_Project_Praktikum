@@ -1,11 +1,14 @@
 package com.example.Projek_Sherine.P9
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.Projek_Sherine.LoginActivity
+import com.example.Projek_Sherine.MainActivity
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.ActivityBaseBinding
 import com.example.Projek_Sherine.databinding.ActivityNinthBinding
@@ -33,6 +36,10 @@ class NinthActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.outline_arrow_back)
+        }
+
+        binding.btnLogin.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         binding.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedIds ->

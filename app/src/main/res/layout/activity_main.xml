@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/cinzel_bold"
+        android:text="MAIN PAGE"
+        android:textAlignment="center"
+        android:textColor="#5E3A42"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="425dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="3dp"
+        android:outlineAmbientShadowColor="#161414"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/detail" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:columnCount="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+        app:useDefaultMargins="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnP5"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:fontFamily="@font/godofwar"
+            android:text="P5"
+            app:backgroundTint="@color/button"
+            app:cornerRadius="16dp"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal"
+            app:strokeColor="#E8D2E3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnP6"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:fontFamily="@font/godofwar"
+            android:text="P6"
+            app:backgroundTint="@color/button"
+            app:cornerRadius="16dp"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal"
+            app:strokeColor="#E8D2E3"
+            tools:layout_editor_absoluteY="369dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSnackbar"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:fontFamily="@font/godofwar"
+            android:text="Snackbar"
+            app:backgroundTint="@color/button"
+            app:cornerRadius="16dp"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal"
+            app:strokeColor="#E8D2E3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:fontFamily="@font/godofwar"
+            android:text="Alert"
+            app:backgroundTint="@color/button"
+            app:cornerRadius="16dp"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal"
+            app:strokeColor="#E8D2E3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogOu2t"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:fontFamily="@font/godofwar"
+            android:text="Log Out"
+            app:backgroundTint="@color/button"
+            app:cornerRadius="16dp"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal"
+            app:strokeColor="#E8D2E3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogOut"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:fontFamily="@font/godofwar"
+            android:text="Log Out"
+            app:backgroundTint="@color/button"
+            app:cornerRadius="16dp"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill_horizontal"
+            app:strokeColor="#E8D2E3" />
+    </androidx.gridlayout.widget.GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
