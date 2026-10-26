@@ -2,7 +2,6 @@ package com.example.Projek_Sherine
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.InputType
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -29,28 +28,9 @@ class LoginActivity : AppCompatActivity() {
 
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
-        binding.userSeePass.setOnClickListener {
-
-            if (binding.edtPassword.inputType == InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD) {
-
-                // Show password
-                binding.edtPassword.inputType = InputType.TYPE_CLASS_TEXT
-                binding.userSeePass.setImageResource(R.drawable.open_eye)
-
-            } else {
-
-                // Hide password
-                binding.edtPassword.inputType =
-                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-                binding.userSeePass.setImageResource(R.drawable.close_eye)
-            }
-
-            binding.edtPassword.setSelection(binding.edtPassword.text.length)
-        }
-
         binding.btnLogin.setOnClickListener {
-            val user = binding.edtUsername.text.toString()
-            val pass = binding.edtPassword.text.toString()
+            val user = binding.inputUsername.text.toString()
+            val pass = binding.inputPassword.text.toString()
 
             val editor = sharedPref.edit()
             editor.putString("username", user)
