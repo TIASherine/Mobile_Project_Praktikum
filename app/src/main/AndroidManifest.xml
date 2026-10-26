@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sherine_TIA">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".P9.NinthActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -45,6 +45,10 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Article.ArticleActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".SplashScreenActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

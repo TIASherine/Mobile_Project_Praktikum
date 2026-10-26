@@ -51,7 +51,6 @@
         android:backgroundTint="@color/cardBg"
         app:cardCornerRadius="5dp"
         app:cardElevation="6dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -85,38 +84,36 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtEmail">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="5dp">
 
-                    <ImageView
-                        android:id="@+id/user_img"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="8dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputEmail"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="290dp"
+                        android:layout_height="50dp"
+                        android:layout_marginHorizontal="35dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:hint="Email"
+                        app:boxStrokeColor="@color/blue"
+                        app:endIconMode="clear_text"
+                        app:hintTextColor="@color/blue"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/email"
-                        app:tint="@color/blue" />
+                        app:placeholderText="Masukkan email"
+                        app:startIconDrawable="@drawable/outline_mail_24"
+                        app:startIconTint="@color/blue">
 
-                    <EditText
-                        android:id="@+id/edtUsername"
-                        android:layout_width="0dp"
-                        android:layout_height="45dp"
-                        android:layout_marginStart="5dp"
-                        android:background="@android:color/transparent"
-                        android:ems="10"
-                        android:fontFamily="@font/nunito_medium"
-                        android:hint="email@gmail.com"
-                        android:inputType="text"
-                        android:textColor="@color/blue"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/user_img"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@+id/user_img"
-                        app:layout_constraintTop_toTopOf="@+id/user_img" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/inputEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -178,7 +175,7 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnVerifikasi"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
@@ -187,6 +184,9 @@
         android:backgroundTint="@color/green"
         android:fontFamily="@font/nunito_medium"
         android:text="VERIFIKASI"
+        app:icon="@drawable/verification"
+        app:iconGravity="textEnd"
+        app:rippleColor="@color/lightGreen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -203,6 +203,7 @@
         android:text="@string/txtLogin"
         android:textColor="@color/blue"
         android:textSize="15sp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnVerifikasi" />
@@ -224,7 +225,7 @@
         android:id="@+id/btnRegister"
         android:layout_width="45dp"
         android:layout_height="21dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="8dp"
         android:background="@android:color/transparent"
         android:text=""
         app:layout_constraintBottom_toBottomOf="@+id/textView2"

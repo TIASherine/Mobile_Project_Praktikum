@@ -78,10 +78,11 @@ class BaseActivity : AppCompatActivity() {
             }
         }
     }
-        private fun replaceFragment(fragment: Fragment) {
-            supportFragmentManager.beginTransaction()
-                .replace(binding.fragmentContainer.id, fragment)
-                .commit()
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(binding.fragmentContainer.id, fragment)
+            .commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -59,7 +59,8 @@ class ArticleFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Article"
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "- Article -"
+        (requireActivity() as AppCompatActivity).supportActionBar?.subtitle = "Stay Healthy, Feel Happy"
 
         val adapter = ArticleAdapter(requireContext(), articleList)
         binding.listArticleItems.adapter = adapter

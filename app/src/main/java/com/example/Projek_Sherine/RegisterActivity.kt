@@ -46,12 +46,12 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         binding.btnOTP.setOnClickListener {
-            val email = binding.edtUsername.text.toString().trim()
+            val email = binding.inputEmail.text.toString().trim()
 
             if (email.isEmpty()) {
-                binding.edtUsername.error = "Email wajib diisi!"
+                binding.textInputEmail.error = "Email wajib diisi!"
             } else if (!email.contains("@")) {
-                binding.edtUsername.error = "Email harus mengandung @"
+                binding.textInputEmail.error = "Email harus mengandung @"
             } else {
                 kodeOTP = Random.nextInt(10000, 100000).toString()
 

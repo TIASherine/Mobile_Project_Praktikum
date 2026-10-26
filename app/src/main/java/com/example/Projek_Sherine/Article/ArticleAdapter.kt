@@ -21,6 +21,8 @@ class ArticleAdapter(
 
         Glide.with(context)
             .load(data.image)
+            .centerCrop()
+            .override(300, 300)
             .into(binding.articleImg)
         binding.textTitle.text = data.title
         binding.textDescription.text = data.description
