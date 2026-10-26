@@ -7,7 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.Projek_Sherine.databinding.ActivityBaseBinding
+import com.example.Projek_Sherine.P5.LimaActivity
+import com.example.Projek_Sherine.P6.EnamActivity
 import com.example.Projek_Sherine.databinding.ActivityMainBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
@@ -29,10 +30,14 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnP5.setOnClickListener {
             Toast.makeText(this, "P5 clicked!", Toast.LENGTH_SHORT).show()
+
+            startActivity(Intent(this, LimaActivity::class.java))
         }
 
         binding.btnP6.setOnClickListener {
             Toast.makeText(this, "P6 clicked!", Toast.LENGTH_SHORT).show()
+
+            startActivity(Intent(this, EnamActivity::class.java))
         }
 
         binding.btnSnackbar.setOnClickListener {
@@ -60,9 +65,16 @@ class MainActivity : AppCompatActivity() {
                 .show()
         }
 
+        binding.btnTutorial.setOnClickListener {
+            startActivity(Intent(this, TutorialScreenActivity::class.java))
+        }
 
         binding.btnLogOut.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
+        }
+
+        binding.btnBack.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
         }
     }
 }
