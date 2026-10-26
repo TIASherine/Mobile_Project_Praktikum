@@ -31,9 +31,10 @@ class TutorialScreenActivity : AppCompatActivity() {
             TutorialFragment2(),
             TutorialFragment3()
         )
+
         val adapter = TutorialFragmentAdapter(this, fragmentsList)
         binding.tutorialMessageViewPager.adapter = adapter
-        binding.tutorialMessageViewPager.adapter = adapter
+
         binding.dotIndicator.attachTo(binding.tutorialMessageViewPager)
     }
 }

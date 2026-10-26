@@ -1,5 +1,6 @@
 package com.example.Projek_Sherine.Tutorial
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,8 +24,12 @@ class TutorialFragment3 : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val sharedPref = requireActivity().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
 
         binding.btnLogin.setOnClickListener {
+            sharedPref.edit().putBoolean("hasSeenTutorial", true).apply()
+
             startActivity(Intent(requireContext(), LoginActivity::class.java))
         }
     }
