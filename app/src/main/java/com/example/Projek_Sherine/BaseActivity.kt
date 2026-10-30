@@ -3,7 +3,6 @@ package com.example.Projek_Sherine
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -27,7 +26,7 @@ class BaseActivity : AppCompatActivity() {
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
+            v.setPadding(0, systemBars.top, 0, 0)
             insets
         }
 
@@ -66,6 +65,7 @@ class BaseActivity : AppCompatActivity() {
                     Toast.makeText(this, "Profile Clicked", Toast.LENGTH_SHORT).show()
 
                     editor.putBoolean("isLogin", false)
+                    editor.putBoolean("tutorialYes", false)
                     editor.apply()
 
                     startActivity(Intent(this, LoginActivity::class.java))

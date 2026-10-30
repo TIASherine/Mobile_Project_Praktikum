@@ -28,7 +28,7 @@ class TutorialFragment3 : Fragment() {
         val sharedPref = requireActivity().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
 
         binding.btnLogin.setOnClickListener {
-            sharedPref.edit().putBoolean("hasSeenTutorial", true).apply()
+            sharedPref.edit().putBoolean("tutorialYes", true).apply()
 
             startActivity(Intent(requireContext(), LoginActivity::class.java))
         }

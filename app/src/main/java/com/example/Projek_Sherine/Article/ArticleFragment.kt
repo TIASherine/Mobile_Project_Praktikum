@@ -63,7 +63,7 @@ class ArticleFragment : Fragment() {
         (requireActivity() as AppCompatActivity).supportActionBar?.subtitle = "Stay Healthy, Feel Happy"
 
         val adapter = ArticleAdapter(requireContext(), articleList)
-        binding.listArticleItems.adapter = adapter
+        binding.gridArticleItems.adapter = adapter
     }
 
     override fun onDestroyView() {

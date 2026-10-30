@@ -3,8 +3,6 @@ package com.example.Projek_Sherine
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.Projek_Sherine.Tutorial.TutorialFragment1
 import com.example.Projek_Sherine.Tutorial.TutorialFragment2
 import com.example.Projek_Sherine.Tutorial.TutorialFragment3
@@ -20,11 +18,11 @@ class TutorialScreenActivity : AppCompatActivity() {
 
         binding = ActivityTutorialScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+//            insets
+//        }
 
         val fragmentsList = listOf(
             TutorialFragment1(),

@@ -1,16 +1,13 @@
 package com.example.Projek_Sherine.More
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.SimpleAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.Projek_Sherine.R
-import com.example.Projek_Sherine.databinding.FragmentMessageBinding
+import androidx.fragment.app.Fragment
 import com.example.Projek_Sherine.databinding.FragmentMoreBinding
 
 class MoreFragment : Fragment() {
@@ -50,6 +47,7 @@ class MoreFragment : Fragment() {
             arrayOf("title", "desc"), // key yang diambil dari data
             intArrayOf(android.R.id.text1, android.R.id.text2) // tempat tampilnya
         )
+
         binding.listViewItems.adapter = adapter
         binding.listViewItems.setOnItemClickListener { _, _, position, _ ->
             val selectedItem = dataListWithDesc[position]
