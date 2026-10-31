@@ -40,6 +40,12 @@ class MoreFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = "More"
+        (requireActivity() as AppCompatActivity).supportActionBar?.subtitle =
+            android.text.Html.fromHtml(
+                "<font color='#114B5F'>Stay </font><font color='#1A936F'>Healthy</font><font color='#114B5F'>, Feel </font><font color='#1A936F'> Happy</font>",
+                android.text.Html.FROM_HTML_MODE_COMPACT
+            )
+
         val adapter = SimpleAdapter(
             requireContext(),
             dataListWithDesc,
@@ -53,8 +59,10 @@ class MoreFragment : Fragment() {
             val selectedItem = dataListWithDesc[position]
             val title = selectedItem["title"]
             val desc = selectedItem["desc"]
-            Toast.makeText(requireContext(), "Kamu memilih: $title ($desc)",
-                Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(), "Kamu memilih: $title ($desc)",
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 

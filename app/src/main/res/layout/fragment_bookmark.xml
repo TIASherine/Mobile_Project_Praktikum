@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bgColour"
-    tools:context=".Article.ArticleFragment">
+    tools:context=".Bookmark.BookmarkFragment">
 
-    <!-- Fixed Toolbar -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
@@ -24,22 +23,20 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- Content below Toolbar -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <!-- Category filters -->
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chipGroupKategori"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="12dp"
-            app:chipSpacingHorizontal="8dp"
             app:singleSelection="true"
             app:selectionRequired="true"
+            app:chipSpacingHorizontal="6dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -50,11 +47,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Semua"
-                android:checkable="true"
-                android:checked="true"
-                app:chipBackgroundColor="@color/lightGreen"
+                android:textColor="@color/blue"
                 app:chipStrokeColor="@color/green"
-                app:chipStrokeWidth="1dp" />
+                app:chipStrokeWidth="1dp"
+                app:chipCornerRadius="20dp"
+                app:chipMinHeight="28dp"
+                app:checkedIconVisible="false" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipNutrisi"
@@ -62,10 +60,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nutrisi"
-                android:checkable="true"
-                app:chipBackgroundColor="@color/lightGreen"
+                android:textColor="@color/blue"
                 app:chipStrokeColor="@color/green"
-                app:chipStrokeWidth="1dp" />
+                app:chipStrokeWidth="1dp"
+                app:chipCornerRadius="20dp"
+                app:chipMinHeight="28dp"
+                app:checkedIconVisible="false" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipKebugaran"
@@ -73,10 +73,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Kebugaran"
-                android:checkable="true"
-                app:chipBackgroundColor="@color/lightGreen"
+                android:textColor="@color/blue"
                 app:chipStrokeColor="@color/green"
-                app:chipStrokeWidth="1dp" />
+                app:chipStrokeWidth="1dp"
+                app:chipCornerRadius="20dp"
+                app:chipMinHeight="28dp"
+                app:checkedIconVisible="false" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipResep"
@@ -84,14 +86,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Resep"
-                android:checkable="true"
-                app:chipBackgroundColor="@color/lightGreen"
+                android:textColor="@color/blue"
                 app:chipStrokeColor="@color/green"
-                app:chipStrokeWidth="1dp" />
+                app:chipStrokeWidth="1dp"
+                app:chipCornerRadius="20dp"
+                app:chipMinHeight="28dp"
+                app:checkedIconVisible="false" />
 
         </com.google.android.material.chip.ChipGroup>
-
-        <!-- Article Grid -->
 
         <GridView
             android:id="@+id/gridArticleItems"

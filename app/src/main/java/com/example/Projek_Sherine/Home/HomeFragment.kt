@@ -33,7 +33,11 @@ class HomeFragment : Fragment() {
 
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = "- Beranda -"
-        (requireActivity() as AppCompatActivity).supportActionBar?.subtitle = "Stay Healthy, Feel Happy"
+        (requireActivity() as AppCompatActivity).supportActionBar?.subtitle =
+            android.text.Html.fromHtml(
+                "<font color='#114B5F'>Stay </font><font color='#1A936F'>Healthy</font><font color='#114B5F'>, Feel </font><font color='#1A936F'> Happy</font>",
+                android.text.Html.FROM_HTML_MODE_COMPACT
+            )
 
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
 

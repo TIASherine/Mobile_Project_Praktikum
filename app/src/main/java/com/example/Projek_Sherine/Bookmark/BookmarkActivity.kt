@@ -1,4 +1,4 @@
-package com.example.Projek_Sherine.Article
+package com.example.Projek_Sherine.Bookmark
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,7 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.ActivityArticleBinding
 
-class ArticleActivity : AppCompatActivity() {
+class BookmarkActivity : AppCompatActivity() {
     private lateinit var binding: ActivityArticleBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

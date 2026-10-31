@@ -1,4 +1,4 @@
-package com.example.Projek_Sherine.Article
+package com.example.Projek_Sherine.Bookmark
 
 import android.content.Context
 import android.content.Intent
@@ -9,10 +9,10 @@ import android.widget.ArrayAdapter
 import com.bumptech.glide.Glide
 import com.example.Projek_Sherine.databinding.ItemArticleBinding
 
-class ArticleAdapter(
+class BookmarkAdapter(
     context: Context,
-    private val articles: List<ArticleModel>
-) : ArrayAdapter<ArticleModel>(context, 0, articles) {
+    private val articles: List<BookmarkModel>
+) : ArrayAdapter<BookmarkModel>(context, 0, articles) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val binding = ItemArticleBinding.inflate(LayoutInflater.from(context), parent, false)
@@ -28,7 +28,7 @@ class ArticleAdapter(
         binding.textDescription.text = data.description
 
         view.setOnClickListener {
-            val i = Intent(context, ArticleActivity::class.java)
+            val i = Intent(context, BookmarkActivity::class.java)
 
             i.putExtra("TITLE", data.title)
             i.putExtra("CONTENT", data.content)

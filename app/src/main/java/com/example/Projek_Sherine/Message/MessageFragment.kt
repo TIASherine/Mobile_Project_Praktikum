@@ -1,13 +1,11 @@
 package com.example.Projek_Sherine.Message
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import com.example.Projek_Sherine.R
-import com.example.Projek_Sherine.databinding.FragmentHomeBinding
+import androidx.fragment.app.Fragment
 import com.example.Projek_Sherine.databinding.FragmentMessageBinding
 
 class MessageFragment : Fragment() {
@@ -39,6 +37,11 @@ class MessageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = "Message"
+        (requireActivity() as AppCompatActivity).supportActionBar?.subtitle =
+            android.text.Html.fromHtml(
+                "<font color='#114B5F'>Stay </font><font color='#1A936F'>Healthy</font><font color='#114B5F'>, Feel </font><font color='#1A936F'> Happy</font>",
+                android.text.Html.FROM_HTML_MODE_COMPACT
+            )
 
         val adapter = MessageAdapter(requireContext(), messageList)
         binding.listMessageItems.adapter = adapter
