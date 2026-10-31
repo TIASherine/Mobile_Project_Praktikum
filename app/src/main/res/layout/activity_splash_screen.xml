@@ -12,7 +12,7 @@
         android:id="@+id/imageView6"
         android:layout_width="262dp"
         android:layout_height="341dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="152dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView8"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
@@ -34,10 +34,11 @@
         android:id="@+id/imageView9"
         android:layout_width="219dp"
         android:layout_height="319dp"
-        android:layout_marginTop="556dp"
+        android:layout_marginTop="544dp"
         android:layout_marginEnd="304dp"
+        android:rotation="26"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.839"
+        app:layout_constraintHorizontal_bias="0.982"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/settings"
@@ -58,14 +59,15 @@
 
     <ImageView
         android:id="@+id/imageView12"
-        android:layout_width="93dp"
-        android:layout_height="232dp"
-        android:layout_marginBottom="564dp"
+        android:layout_width="115dp"
+        android:layout_height="260dp"
+        android:layout_marginStart="312dp"
+        android:layout_marginBottom="556dp"
         android:rotation="-40"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.811"
         app:srcCompat="@drawable/muscle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

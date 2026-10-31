@@ -68,5 +68,38 @@ class HomeFragment : Fragment() {
                     dialog.dismiss()
                 }.setCancelable(false).show()
         }
+
+        val bookmarks = listOf(
+            binding.btnBookmark,
+            binding.btnBookmark2
+        )
+
+        bookmarks.forEach { bookmark ->
+            bookmark.setOnClickListener {
+                bookmark.isSelected = !bookmark.isSelected
+
+                bookmark.setImageResource(
+                    if (bookmark.isSelected) R.drawable.bookmark_filled
+                    else R.drawable.bookmark
+                )
+            }
+        }
+
+        val detailButtons = listOf(
+            binding.btnArticle1Detail,
+            binding.btnArticle2Detail,
+            binding.btnArticle3Detail,
+            binding.btnArticle4Detail
+        )
+
+        detailButtons.forEach { button ->
+            button.setOnClickListener {
+                requireActivity()
+                    .findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(
+                        R.id.bottom_nav_view
+                    )
+                    .selectedItemId = R.id.action_articles
+            }
+        }
     }
 }

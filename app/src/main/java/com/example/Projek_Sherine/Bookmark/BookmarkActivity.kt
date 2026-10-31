@@ -6,16 +6,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.Projek_Sherine.R
-import com.example.Projek_Sherine.databinding.ActivityArticleBinding
+import com.example.Projek_Sherine.databinding.ActivityBookmarkBinding
 
 class BookmarkActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityArticleBinding
+    private lateinit var binding: ActivityBookmarkBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityArticleBinding.inflate(layoutInflater)
+        binding = ActivityBookmarkBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

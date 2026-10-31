@@ -21,14 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/lightGreen"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_scrollFlags="scroll|enterAlways"
             app:navigationIcon="@drawable/outline_arrow_back"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:subtitleTextColor="@color/black"
             app:titleTextColor="@color/blue" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -43,7 +36,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp"
+            android:clipToPadding="false">
 
             <TextView
                 android:id="@+id/txtUsername"
@@ -176,13 +171,14 @@
                             android:id="@+id/txtJudulArtikel1"
                             android:layout_width="200dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
                             android:layout_marginTop="4dp"
                             android:fontFamily="@font/nunito_bold"
                             android:text="Nutrisi &amp; Menu Sehat"
                             android:textColor="@color/blue"
                             android:textSize="14sp"
                             app:layout_constraintEnd_toStartOf="@id/btnBookmark"
-                            app:layout_constraintHorizontal_bias="0.302"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toEndOf="@+id/imgArtikel1"
                             app:layout_constraintTop_toBottomOf="@id/kategori1" />
 
@@ -309,7 +305,7 @@
             <Button
                 android:id="@+id/btnArticlesDetail"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="@color/green"
                 android:fontFamily="@font/nunito_medium"
@@ -324,7 +320,7 @@
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="25dp"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_marginEnd="2dp"
                 android:rotation="-90"
                 app:layout_constraintBottom_toBottomOf="@+id/btnArticlesDetail"
@@ -402,12 +398,13 @@
                             android:id="@+id/txtDescArtikel3"
                             android:layout_width="210dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
                             android:fontFamily="@font/nunito_regular"
                             android:text="@string/descResep"
                             android:textColor="@color/blue"
                             android:textSize="12sp"
                             app:layout_constraintEnd_toStartOf="@+id/btnArticle3Detail"
-                            app:layout_constraintHorizontal_bias="0.363"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toEndOf="@+id/imgArtikel3"
                             app:layout_constraintTop_toBottomOf="@+id/txtJudulArtikel3" />
 
@@ -495,12 +492,13 @@
                             android:id="@+id/txtDescArtikel4"
                             android:layout_width="210dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
                             android:fontFamily="@font/nunito_regular"
                             android:text="@string/descKebugaran"
                             android:textColor="@color/blue"
                             android:textSize="12sp"
                             app:layout_constraintEnd_toStartOf="@+id/btnArticle4Detail"
-                            app:layout_constraintHorizontal_bias="0.363"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toEndOf="@+id/imgArtikel4"
                             app:layout_constraintTop_toBottomOf="@+id/txtJudulArtikel4" />
 
@@ -517,16 +515,6 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
             </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/txtKosong"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@android:color/transparent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Artikel4" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

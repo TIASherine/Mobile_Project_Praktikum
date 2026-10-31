@@ -9,9 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.example.Projek_Sherine.Articles.ArticlesFragment
 import com.example.Projek_Sherine.Bookmark.BookmarkFragment
 import com.example.Projek_Sherine.Home.HomeFragment
-import com.example.Projek_Sherine.More.MoreFragment
 import com.example.Projek_Sherine.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -45,15 +45,15 @@ class BaseActivity : AppCompatActivity() {
                     true
                 }
 
-//                R.id.action_message -> {
-//                    replaceFragment(MessageFragment())
-//                    true
-//                }
-
-                R.id.action_more -> {
-                    replaceFragment(MoreFragment())
+                R.id.action_articles -> {
+                    replaceFragment(ArticlesFragment())
                     true
                 }
+
+//                R.id.action_more -> {
+//                    replaceFragment(MoreFragment())
+//                    true
+//                }
 
                 R.id.action_bookmark -> {
                     replaceFragment(BookmarkFragment())

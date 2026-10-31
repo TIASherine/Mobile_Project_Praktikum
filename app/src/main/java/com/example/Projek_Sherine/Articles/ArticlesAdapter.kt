@@ -1,4 +1,4 @@
-package com.example.Projek_Sherine.Message
+package com.example.Projek_Sherine.Articles
 
 import android.content.Context
 import android.content.Intent
@@ -8,12 +8,11 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.bumptech.glide.Glide
 import com.example.Projek_Sherine.databinding.ItemMessageBinding
-import com.google.android.material.snackbar.Snackbar
 
-class MessageAdapter(
+class ArticlesAdapter(
     context: Context,
-    private val messages: List<MessageModel>
-) : ArrayAdapter<MessageModel>(context, 0, messages) {
+    private val messages: List<ArticlesModel>
+) : ArrayAdapter<ArticlesModel>(context, 0, messages) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val binding = ItemMessageBinding.inflate(LayoutInflater.from(context), parent, false)
@@ -33,7 +32,7 @@ class MessageAdapter(
 //                Snackbar.LENGTH_SHORT
 //            ).show()
 
-            val i = Intent(context, MessageActivity::class.java)
+            val i = Intent(context, ArticlesActivity::class.java)
 
             i.putExtra("SENDER", data.senderName)
             i.putExtra("MESSAGE", data.messageText)

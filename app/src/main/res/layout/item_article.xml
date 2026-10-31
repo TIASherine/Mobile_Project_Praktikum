@@ -20,39 +20,61 @@
             android:id="@+id/articleImg"
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:contentDescription="Article Image"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnKategori"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="15dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingHorizontal="8dp"
+            android:text="Nutrisi"
+            android:textAllCaps="false"
+            android:textColor="@color/blue"
+            android:textSize="11sp"
+            app:backgroundTint="@color/lightGreen"
+            app:cornerRadius="11dp"
+            app:layout_constraintStart_toEndOf="@id/articleImg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/blue"
+            app:strokeWidth="1dp" />
+
         <TextView
             android:id="@+id/textTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/nunito_bold"
             android:text="Article Title"
             android:textColor="@color/blue"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/articleImg"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/articleImg"
+            app:layout_constraintTop_toBottomOf="@+id/btnKategori" />
 
         <TextView
             android:id="@+id/textDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="4dp"
             android:ellipsize="end"
             android:fontFamily="@font/nunito_regular"
             android:maxLines="3"
             android:text="Article Description"
             android:textColor="@color/blue"
-            android:textSize="14sp"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/articleImg"
+            app:layout_constraintStart_toEndOf="@+id/articleImg"
             app:layout_constraintTop_toBottomOf="@id/textTitle" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

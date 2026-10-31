@@ -9,11 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
 import com.example.Projek_Sherine.R
-import com.example.Projek_Sherine.databinding.FragmentArticleBinding
+import com.example.Projek_Sherine.databinding.FragmentBookmarkBinding
 import com.google.android.material.chip.Chip
 
 class BookmarkFragment : Fragment() {
-    private var _binding: FragmentArticleBinding? = null
+    private var _binding: FragmentBookmarkBinding? = null
     private val binding get() = _binding!!
 
     private val articleList = listOf(
@@ -54,7 +54,7 @@ class BookmarkFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentArticleBinding.inflate(inflater, container, false)
+        _binding = FragmentBookmarkBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -62,7 +62,7 @@ class BookmarkFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "- Article -"
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "- Bookmark -"
         (requireActivity() as AppCompatActivity).supportActionBar?.subtitle =
             android.text.Html.fromHtml(
                 "<font color='#114B5F'>Stay </font><font color='#1A936F'>Healthy</font><font color='#114B5F'>, Feel </font><font color='#1A936F'> Happy</font>",
@@ -82,8 +82,14 @@ class BookmarkFragment : Fragment() {
                     if (chip.isChecked)
                         "#88D498".toColorInt()
                     else
-                        android.graphics.Color.TRANSPARENT
+                        "#EAF5EE".toColorInt()
                 )
+
+                chip.isCloseIconVisible = chip.isChecked && chip.id != R.id.chipSemua
+
+                chip.setOnCloseIconClickListener {
+                    binding.chipGroupKategori.check(R.id.chipSemua)
+                }
             }
         }
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:background="@color/bgColour"
-    tools:context=".Message.MessageFragment">
+    tools:context=".Articles.ArticlesFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/lightGreen"
+            app:navigationIcon="@drawable/outline_arrow_back"
             app:layout_scrollFlags="scroll|enterAlways"
             app:titleTextColor="@color/blue" />
     </com.google.android.material.appbar.AppBarLayout>
