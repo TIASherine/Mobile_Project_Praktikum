@@ -44,7 +44,7 @@ class BookmarkFragment : Fragment() {
         BookmarkModel(
             "Menjaga Kebersihan",
             "Kebiasaan sederhana untuk hidup sehat.",
-            R.drawable.article5,
+            R.drawable.resep3,
             "Menjaga kebersihan diri dan lingkungan merupakan salah satu langkah penting dalam menjaga kesehatan."
         )
     )
@@ -70,7 +70,7 @@ class BookmarkFragment : Fragment() {
             )
 
         val adapter = BookmarkAdapter(requireContext(), articleList)
-        binding.gridArticleItems.adapter = adapter
+        binding.gridBookmarkItems.adapter = adapter
 
         binding.chipGroupKategori.check(R.id.chipSemua)
 

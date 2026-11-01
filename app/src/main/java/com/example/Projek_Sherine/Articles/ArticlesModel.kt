@@ -1,7 +1,9 @@
 package com.example.Projek_Sherine.Articles
 
 data class ArticlesModel(
-    val senderName: String,
-    val messageText: String,
-    val avatarUrl: String
+    val title: String,
+    val description: String,
+    val imageResId: Int,
+    val content: String,
+    val categories: List<String> = emptyList()
 )

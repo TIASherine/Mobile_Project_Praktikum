@@ -54,27 +54,11 @@
                 app:chipStrokeWidth="2dp" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chipNutrisi"
+                android:id="@+id/chipArtikel"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nutrisi"
-                android:textColor="@color/blue"
-                app:checkedIconVisible="false"
-                app:chipCornerRadius="20dp"
-                app:chipMinHeight="28dp"
-                app:chipStrokeColor="@color/green"
-                app:chipStrokeWidth="2dp"
-                app:closeIcon="@drawable/outline_close_24"
-                app:closeIconVisible="false"
-                app:closeIconTint="@color/blue" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chipKebugaran"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kebugaran"
+                android:text="Artikel"
                 android:textColor="@color/blue"
                 app:checkedIconVisible="false"
                 app:chipCornerRadius="20dp"
@@ -101,10 +85,26 @@
                 app:closeIconVisible="false"
                 app:closeIconTint="@color/blue" />
 
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipKebugaran"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kebugaran"
+                android:textColor="@color/blue"
+                app:checkedIconVisible="false"
+                app:chipCornerRadius="20dp"
+                app:chipMinHeight="28dp"
+                app:chipStrokeColor="@color/green"
+                app:chipStrokeWidth="2dp"
+                app:closeIcon="@drawable/outline_close_24"
+                app:closeIconVisible="false"
+                app:closeIconTint="@color/blue" />
+
         </com.google.android.material.chip.ChipGroup>
 
         <GridView
-            android:id="@+id/gridArticleItems"
+            android:id="@+id/gridBookmarkItems"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginHorizontal="12dp"
