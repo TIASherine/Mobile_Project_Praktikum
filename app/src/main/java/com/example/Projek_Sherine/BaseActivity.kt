@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -61,17 +62,35 @@ class BaseActivity : AppCompatActivity() {
                 }
 
                 R.id.action_profile -> {
-                    Toast.makeText(this, "Profile Clicked", Toast.LENGTH_SHORT).show()
+                    val options = arrayOf("Main", "Log Out")
 
-                    editor.putBoolean("isLogin", false)
-                    editor.putBoolean("tutorialYes", false)
-                    editor.apply()
+                    AlertDialog.Builder(this)
+                        .setTitle("Profile")
+                        .setItems(options) { dialog, which ->
+                            when (which) {
+                                0 -> {
+                                    Toast.makeText(this, "Main Page", Toast.LENGTH_SHORT)
+                                        .show()
+                                    startActivity(Intent(this, MainActivity::class.java))
+                                }
 
-                    startActivity(Intent(this, LoginActivity::class.java))
+                                1 -> { // Settings
+                                    Toast.makeText(this, "Log out", Toast.LENGTH_SHORT)
+                                        .show()
 
-                    finish()
+                                    editor.putBoolean("isLogin", false)
+                                    editor.putBoolean("tutorialYes", false)
+                                    editor.apply()
+
+                                    startActivity(Intent(this, LoginActivity::class.java))
+                                    finish()
+                                }
+                            }
+                        }
+                        .show()
                     true
                 }
+
 
                 else -> false
             }
