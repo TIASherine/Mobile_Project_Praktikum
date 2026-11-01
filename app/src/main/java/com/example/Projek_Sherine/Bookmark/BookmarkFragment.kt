@@ -80,21 +80,34 @@ class BookmarkFragment : Fragment() {
                         ArticlesData.kebugaranList
                 ).distinctBy { it.title }
 
+        // Three default bookmarks for the demo
+        val defaultTitles = setOf(
+            "Resep Salad Sehat dan Praktis",
+            "Olahraga & Aktivitas Fisik",
+            "7 Gerakan Yoga untuk Pemula"
+        )
+
         val savedArticles = allArticles.filter { article ->
-            prefs.getBoolean(article.title, false)
+            article.title in defaultTitles ||
+                    prefs.getBoolean(article.title, false)
         }
 
-        val selectedCategory = when (binding.chipGroupKategori.checkedChipId) {
-            R.id.chipArtikel -> "Artikel"
-            R.id.chipKebugaran -> "Kebugaran"
-            R.id.chipResep -> "Resep"
-            else -> "Semua"
-        }
+        val filteredArticles = when (
+            binding.chipGroupKategori.checkedChipId
+        ) {
+            R.id.chipArtikel -> savedArticles.filter {
+                it in ArticlesData.articleList
+            }
 
-        val filteredArticles = if (selectedCategory == "Semua") {
-            savedArticles
-        } else {
-            savedArticles.filter { selectedCategory in it.categories }
+            R.id.chipResep -> savedArticles.filter {
+                it in ArticlesData.resepList
+            }
+
+            R.id.chipKebugaran -> savedArticles.filter {
+                it in ArticlesData.kebugaranList
+            }
+
+            else -> savedArticles
         }
 
         binding.gridBookmarkItems.adapter = ArticlesAdapter(
