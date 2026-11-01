@@ -3,111 +3,133 @@ package com.example.Projek_Sherine.Articles
 import com.example.Projek_Sherine.R
 
 object ArticlesData {
-    val articleList = listOf(
 
+
+    val articleList = listOf(
         ArticlesModel(
             "Resep Salad Sehat dan Praktis",
-            "Ide membuat salad sayuran segar untuk sehari-hari.",
+            "Ide salad segar dan bergizi.",
             R.drawable.article1,
-            "Pelajari cara membuat salad sayur dengan berbagai bahan segar melalui artikel Halodoc.",
-            listOf("Resep", "Nutrisi")
+            listOf("Nutrisi", "Resep"),
+            "https://www.antaranews.com/berita/5580345/salad-dapat-jadi-camilan-segar-musim-panas-untuk-detoksifikasi"
         ),
         ArticlesModel(
             "Kenali Tanda Tubuh Butuh Istirahat",
-            "Mengenali kelelahan akibat rutinitas sehari-hari.",
+            "Tanda kelelahan akibat aktivitas harian.",
             R.drawable.article2,
-            "Kenali tanda-tanda kelelahan tubuh dan pentingnya memberikan waktu untuk beristirahat.",
-            listOf("Istirahat")
+            listOf("Istirahat"),
+            "https://www.antaranews.com/berita/5004733/ambil-jeda-ketika-kelelahan-kerja-mendera"
         ),
         ArticlesModel(
             "Tips Tidur Malam Lebih Berkualitas",
-            "Kebiasaan yang membantu meningkatkan kualitas tidur.",
+            "Tips meningkatkan kualitas tidur.",
             R.drawable.article3,
-            "Pelajari berbagai faktor yang memengaruhi kualitas tidur dan cara membangun kebiasaan tidur yang sehat.",
-            listOf("Istirahat", "Kebugaran")
+            listOf("Istirahat", "Kebugaran"),
+            "https://www.antaranews.com/berita/5670461/12-kebiasaan-malam-hari-yang-membantu-tidur-lebih-berkualitas"
         ),
         ArticlesModel(
             "Isi Piringku: Panduan Gizi Seimbang",
-            "Panduan memenuhi kebutuhan nutrisi harian.",
+            "Panduan pola makan bergizi seimbang.",
             R.drawable.article4,
-            "Pelajari panduan Isi Piringku dari Kementerian Kesehatan Republik Indonesia.",
-            listOf("Nutrisi", "Resep")
+            listOf("Nutrisi", "Resep"),
+            "https://www.antaranews.com/berita/4292515/bpom-perhatikan-isi-piringku-dan-ing-untuk-asupan-gizi-seimbang"
         ),
         ArticlesModel(
             "Kandungan Protein dalam Telur",
-            "Mengenal manfaat telur sebagai sumber protein.",
+            "Manfaat protein telur bagi tubuh.",
             R.drawable.article5,
-            "Pelajari kandungan protein dalam telur dan manfaatnya untuk memenuhi kebutuhan gizi.",
-            listOf("Nutrisi", "Kebugaran")
+            listOf("Kebugaran", "Nutrisi"),
+            "https://www.antaranews.com/berita/4257103/kandungan-serta-manfaat-dalam-telur"
+        ),
+        ArticlesModel(
+            "Olahraga & Aktivitas Fisik",
+            "Manfaat olahraga untuk kebugaran.",
+            R.drawable.article6,
+            listOf("Kebugaran"),
+            "https://www.antaranews.com/berita/5736975/dokter-sarankan-kombinasi-tiga-jenis-olahraga-untuk-jaga-kebugaran"
         )
     )
 
     val resepList = listOf(
         ArticlesModel(
-            "Sarapan Sehat Bergizi Lengkap",
-            "Ide sarapan sehat untuk memulai hari.",
+            "Burger Daging Sapi",
+            "Burger rumahan dengan daging sapi dan keju.",
             R.drawable.resep1,
-            "Sarapan bergizi seimbang dapat terdiri dari telur, sayuran, buah-buahan, dan sumber karbohidrat untuk membantu memenuhi kebutuhan energi sehari-hari.",
-            listOf("Makanan")
+            listOf("Makanan"),
+            "https://cookpad.com/id/resep/13823794"
         ),
         ArticlesModel(
-            "Smoothie Bowl Beri & Granola",
-            "Menu smoothie bowl yang sehat dan menyegarkan.",
+            "Jus Mangga Yogurt",
+            "Minuman mangga segar dengan yogurt.",
             R.drawable.resep2,
-            "Smoothie bowl dapat dibuat menggunakan buah beri, yoghurt, dan granola sebagai pilihan sarapan atau camilan yang mengandung serat dan berbagai nutrisi.",
-            listOf("Makanan")
+            listOf("Minuman"),
+            "https://cookpad.com/id/resep/6282342"
         ),
         ArticlesModel(
-            "Burger Gandum Daging Sapi",
-            "Alternatif burger dengan roti gandum.",
+            "Smoothie Bowl Buah Naga dan Pisang",
+            "Smoothie bowl dengan buah dan granola.",
             R.drawable.resep3,
-            "Burger gandum dapat dibuat menggunakan roti gandum, daging sapi matang, selada, tomat, dan bahan pelengkap lainnya untuk menghasilkan menu yang lebih seimbang.",
-            listOf("Makanan")
+            listOf("Makanan", "Cemilan"),
+            "https://cookpad.com/id/resep/24533755"
         ),
         ArticlesModel(
-            "Tumis Sayur Cepat Warna-Warni",
-            "Resep tumis sayuran praktis dan bergizi.",
+            "Banana Oatmeal Cookies",
+            "Cemilan pisang dan oatmeal yang praktis.",
             R.drawable.resep4,
-            "Tumis sayur dibuat menggunakan kombinasi wortel, brokoli, paprika, dan sayuran lainnya dengan sedikit minyak dan bumbu sesuai selera.",
-            listOf("Makanan")
+            listOf("Cemilan"),
+            "https://cookpad.com/id/resep/5319944"
         ),
         ArticlesModel(
-            "Olahan Alpukat Super Nutrisi",
-            "Inspirasi hidangan sehat berbahan alpukat.",
+            "Sarapan Sehat",
+            "Roti gandum dengan telur orak-arik.",
             R.drawable.resep5,
-            "Alpukat mengandung lemak tak jenuh dan serat. Buah ini dapat diolah menjadi berbagai hidangan seperti salad, roti alpukat, atau smoothie.",
-            listOf("Makanan")
+            listOf("Makanan"),
+            "https://cookpad.com/id/resep/9757050"
+        ),
+        ArticlesModel(
+            "Es Buah Segar",
+            "Minuman dingin dengan buah dan selasih.",
+            R.drawable.resep6,
+            listOf("Minuman"),
+            "https://cookpad.com/id/resep/13919048"
+        ),
+        ArticlesModel(
+            "Tumis Sayur Brokoli Kol Wortel",
+            "Tumis sayuran dengan bumbu sederhana.",
+            R.drawable.resep7,
+            listOf("Makanan"),
+            "https://cookpad.com/id/resep/15642957"
         )
     )
 
     val kebugaranList = listOf(
         ArticlesModel(
-            "Olahraga Pagi",
-            "Manfaat olahraga ringan di pagi hari.",
+            "Senam Kardio di Rumah",
+            "Gerakan kardio sederhana tanpa alat.",
             R.drawable.kebugaran1,
-            "Olahraga pagi seperti berjalan kaki, jogging, atau peregangan dapat membantu meningkatkan kebugaran tubuh dan mempersiapkan diri untuk aktivitas sehari-hari.",
-            listOf("Kardio")
+            listOf("Kardio"),
+            "https://hellosehat.com/kebugaran/kardio/senam-kardio-di-rumah/"
         ),
         ArticlesModel(
-            "Yoga untuk Pemula",
-            "Latihan sederhana untuk menjaga fleksibilitas.",
+            "7 Gerakan Yoga untuk Pemula",
+            "Latihan yoga untuk kelenturan tubuh.",
             R.drawable.kebugaran2,
-            "Yoga membantu meningkatkan fleksibilitas, keseimbangan, dan konsentrasi melalui kombinasi gerakan tubuh serta latihan pernapasan.",
-            listOf("Fleksibilitas")
+            listOf("Fleksibilitas"),
+            "https://www.alodokter.com/7-gerakan-yoga-untuk-pemula-yang-dapat-dilakukan-di-rumah"
         ),
         ArticlesModel(
-            "Latihan Kekuatan di Rumah",
-            "Latihan otot sederhana tanpa peralatan gym.",
+            "Workout Pemula di Rumah",
+            "Latihan squat, push-up, dan plank.",
             R.drawable.kebugaran3,
-            "Latihan seperti squat, push-up, dan plank dapat membantu memperkuat otot tubuh serta meningkatkan daya tahan fisik.",
-            listOf("Kekuatan")
+            listOf("Kekuatan"),
+            "https://www.alodokter.com/7-gerakan-workout-untuk-pemula-yang-mudah-dilakukan-di-rumah"
         ),
         ArticlesModel(
-            "Kombinasi Kardio dan Kekuatan",
-            "Latihan untuk meningkatkan stamina dan kekuatan otot.",
+            "Kalistenik untuk Pemula",
+            "Latihan kardio dan kekuatan tubuh.",
             R.drawable.kebugaran4,
-            "Menggabungkan aktivitas kardio seperti jogging dengan latihan kekuatan seperti squat dapat membantu menjaga kebugaran tubuh secara menyeluruh.",
-            listOf("Kardio", "Kekuatan")
+            listOf("Kardio", "Kekuatan"),
+            "https://hellosehat.com/kebugaran/kekuatan/olahraga-kalistenik/"
         )
     )
 }

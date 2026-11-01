@@ -20,6 +20,7 @@
             android:id="@+id/articleImg"
             android:layout_width="90dp"
             android:layout_height="90dp"
+            android:contentDescription="Article Image"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,11 +31,23 @@
             android:layout_width="0dp"
             android:layout_height="35dp"
             android:layout_marginStart="15dp"
-            app:singleLine="true"
+            android:layout_marginEnd="6dp"
             app:chipSpacingHorizontal="4dp"
+            app:layout_constraintEnd_toStartOf="@id/btnArticleBookmark"
             app:layout_constraintStart_toEndOf="@id/articleImg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/btnArticleBookmark"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Bookmark"
+            android:padding="2dp"
+            android:src="@drawable/bookmark"
+            app:layout_constraintBottom_toBottomOf="@id/articleLabels"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@id/articleLabels" />
 
         <TextView
             android:id="@+id/textTitle"
@@ -46,10 +59,9 @@
             android:text="Article Title"
             android:textColor="@color/blue"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/articleImg"
-            app:layout_constraintTop_toBottomOf="@+id/articleLabels" />
+            app:layout_constraintEnd_toStartOf="@id/btnArticleArrow"
+            app:layout_constraintStart_toEndOf="@id/articleImg"
+            app:layout_constraintTop_toBottomOf="@id/articleLabels" />
 
         <TextView
             android:id="@+id/textDescription"
@@ -63,9 +75,20 @@
             android:text="Article Description"
             android:textColor="@color/blue"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/articleImg"
+            app:layout_constraintEnd_toStartOf="@id/btnArticleArrow"
+            app:layout_constraintStart_toEndOf="@id/articleImg"
             app:layout_constraintTop_toBottomOf="@id/textTitle" />
+
+        <ImageView
+            android:id="@+id/btnArticleArrow"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Read Article"
+            android:padding="2dp"
+            android:rotation="180"
+            android:src="@drawable/outline_arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

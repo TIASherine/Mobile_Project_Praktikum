@@ -10,12 +10,14 @@
 
     <View
         android:id="@+id/background_header"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
-        android:background="@drawable/bg_header_wave"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="745dp"
+        android:layout_height="198dp"
+        android:background="@drawable/wave3"
+        android:rotation="180"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imgLogo"
@@ -58,13 +60,12 @@
 
     <View
         android:id="@+id/background_header_bottom"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
-        android:background="@drawable/bg_header_wave"
-        android:rotation="180"
+        android:layout_width="651dp"
+        android:layout_height="112dp"
+        android:background="@drawable/wave2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.791"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

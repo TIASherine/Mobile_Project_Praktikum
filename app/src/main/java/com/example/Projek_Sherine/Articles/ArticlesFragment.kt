@@ -16,28 +16,38 @@ import com.google.android.material.chip.Chip
 class ArticlesFragment : Fragment() {
     private var _binding: FragmentArticlesBinding? = null
     private val binding get() = _binding!!
-    private val articleList = ArticlesData.articleList
-    private val resepList = ArticlesData.resepList
-    private val kebugaranList = ArticlesData.kebugaranList
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         _binding = FragmentArticlesBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "- Articles -"
-        (requireActivity() as AppCompatActivity).supportActionBar?.subtitle =
-            android.text.Html.fromHtml(
-                "<font color='#114B5F'>Stay </font><font color='#1A936F'>Healthy</font><font color='#114B5F'>, Feel </font><font color='#1A936F'> Happy</font>",
+        super.onViewCreated(view, savedInstanceState)
+
+        val activity = requireActivity() as AppCompatActivity
+        activity.setSupportActionBar(binding.toolbar)
+
+        activity.supportActionBar?.apply {
+            title = "- Articles -"
+            subtitle = android.text.Html.fromHtml(
+                "<font color='#114B5F'>Stay </font>" +
+                        "<font color='#1A936F'>Healthy</font>" +
+                        "<font color='#114B5F'>, Feel </font>" +
+                        "<font color='#1A936F'>Happy</font>",
                 android.text.Html.FROM_HTML_MODE_COMPACT
             )
+        }
 
+        val context = requireContext()
+
+        val green = ContextCompat.getColor(context, R.color.green)
+        val blue = ContextCompat.getColor(context, R.color.blue)
+        val lightGreen = ContextCompat.getColor(context, R.color.lightGreen)
 
         val pageTitles = listOf("Artikel", "Resep", "Kebugaran")
         var currentPage = 0
@@ -46,17 +56,15 @@ class ArticlesFragment : Fragment() {
             binding.txtArtikel.text = pageTitles[currentPage]
 
             val selectedList = when (currentPage) {
-                0 -> articleList
-                1 -> resepList
-                2 -> kebugaranList
-                else -> articleList
+                0 -> ArticlesData.articleList
+                1 -> ArticlesData.resepList
+                else -> ArticlesData.kebugaranList
             }
 
             val categories = when (currentPage) {
                 0 -> listOf("Semua", "Resep", "Kebugaran", "Istirahat", "Nutrisi")
                 1 -> listOf("Semua", "Makanan", "Minuman", "Cemilan")
-                2 -> listOf("Semua", "Kardio", "Kekuatan", "Fleksibilitas")
-                else -> listOf("Semua")
+                else -> listOf("Semua", "Kardio", "Kekuatan", "Fleksibilitas")
             }
 
             fun displayArticles(category: String) {
@@ -66,24 +74,21 @@ class ArticlesFragment : Fragment() {
                     selectedList.filter { category in it.categories }
                 }
 
-                val adapter = ArticlesAdapter(requireContext(), filteredList)
+                val adapter = ArticlesAdapter(context, filteredList)
 
                 binding.articleContainer.removeAllViews()
 
-                for (i in 0 until adapter.count) {
-                    val itemView = adapter.getView(
-                        i,
-                        null,
-                        binding.articleContainer
+                repeat(adapter.count) { index ->
+                    binding.articleContainer.addView(
+                        adapter.getView(index, null, binding.articleContainer)
                     )
-                    binding.articleContainer.addView(itemView)
                 }
             }
 
             binding.chipGroupKategori.removeAllViews()
 
             categories.forEach { category ->
-                val chip = Chip(requireContext()).apply {
+                val chip = Chip(context).apply {
                     id = View.generateViewId()
                     text = category
                     isCheckable = true
@@ -91,14 +96,10 @@ class ArticlesFragment : Fragment() {
                     isCloseIconVisible = false
 
                     chipBackgroundColor = ColorStateList.valueOf(Color.TRANSPARENT)
-                    chipStrokeColor = ColorStateList.valueOf(
-                        ContextCompat.getColor(requireContext(), R.color.green)
-                    )
+                    chipStrokeColor = ColorStateList.valueOf(green)
                     chipStrokeWidth = resources.displayMetrics.density
 
-                    setTextColor(
-                        ContextCompat.getColor(requireContext(), R.color.blue)
-                    )
+                    setTextColor(blue)
 
                     shapeAppearanceModel = shapeAppearanceModel
                         .toBuilder()
@@ -109,24 +110,14 @@ class ArticlesFragment : Fragment() {
                 binding.chipGroupKategori.addView(chip)
             }
 
-            parentFragmentManager.setFragmentResultListener(
-                "open_articles_page",
-                viewLifecycleOwner
-            ) { _, bundle ->
-                currentPage = bundle.getInt("page", 0)
-                showPage()
-            }
-
             binding.chipGroupKategori.setOnCheckedStateChangeListener { group, checkedIds ->
 
                 for (i in 0 until group.childCount) {
                     val chip = group.getChildAt(i) as Chip
 
                     chip.chipBackgroundColor = ColorStateList.valueOf(
-                        if (chip.isChecked)
-                            ContextCompat.getColor(requireContext(), R.color.lightGreen)
-                        else
-                            Color.TRANSPARENT
+                        if (chip.isChecked) lightGreen
+                        else Color.TRANSPARENT
                     )
                 }
 
@@ -146,9 +137,23 @@ class ArticlesFragment : Fragment() {
             binding.btnNextPage.isEnabled = currentPage < 2
             binding.btnNextPage.alpha = if (currentPage < 2) 1f else 0f
 
-            binding.articleScrollView.scrollTo(0, 0)
+            binding.articleScrollView.post {
+                binding.articleScrollView.scrollTo(0, 0)
+            }
+
+            binding.chipScrollView.post {
+                binding.chipScrollView.scrollTo(0, 0)
+            }
         }
 
+        // Receive page navigation from HomeFragment
+        parentFragmentManager.setFragmentResultListener(
+            "open_articles_page",
+            viewLifecycleOwner
+        ) { _, bundle ->
+            currentPage = bundle.getInt("page", 0).coerceIn(0, 2)
+            showPage()
+        }
 
         binding.btnNextPage.setOnClickListener {
             if (currentPage < 2) {

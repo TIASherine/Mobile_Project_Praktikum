@@ -27,6 +27,6 @@
         android:background="@color/lightGreen"
         app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="@color/blue"
-        app:itemRippleColor="@color/white"
+        app:itemRippleColor="#331A936F"
         app:itemTextColor="@color/blue"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

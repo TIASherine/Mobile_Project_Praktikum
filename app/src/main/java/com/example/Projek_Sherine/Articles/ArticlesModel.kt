@@ -4,6 +4,6 @@ data class ArticlesModel(
     val title: String,
     val description: String,
     val imageResId: Int,
-    val content: String,
-    val categories: List<String> = emptyList()
+    val categories: List<String>,
+    val url: String
 )

@@ -10,12 +10,14 @@
 
     <View
         android:id="@+id/background_header"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
-        android:background="@drawable/bg_header_wave"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="598dp"
+        android:layout_height="130dp"
+        android:background="@drawable/wave2"
+        android:rotation="180"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.641"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imgLogo"
@@ -58,8 +60,8 @@
 
     <View
         android:id="@+id/background_header_bottom"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
+        android:layout_width="424dp"
+        android:layout_height="195dp"
         android:background="@drawable/bg_header_wave"
         android:rotation="180"
         app:layout_constraintBottom_toBottomOf="parent"

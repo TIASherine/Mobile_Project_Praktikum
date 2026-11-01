@@ -3,78 +3,89 @@ package com.example.Projek_Sherine.Bookmark
 import android.content.Context
 import android.content.Intent
 import android.content.res.ColorStateList
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.graphics.toColorInt
 import com.bumptech.glide.Glide
 import com.example.Projek_Sherine.databinding.ItemArticleBinding
 import com.google.android.material.chip.Chip
 
 class BookmarkAdapter(
     context: Context,
-    private val articles: List<BookmarkModel>
+    articles: List<BookmarkModel>
 ) : ArrayAdapter<BookmarkModel>(context, 0, articles) {
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val binding = ItemArticleBinding.inflate(LayoutInflater.from(context), parent, false)
-        val view = binding.root
-        val data = articles[position]
+    private val blue = "#114B5F".toColorInt()
+    private val lightGreen = "#C6DABF".toColorInt()
+
+    override fun getView(
+        position: Int,
+        convertView: View?,
+        parent: ViewGroup
+    ): View {
+        val binding = if (convertView == null) {
+            ItemArticleBinding.inflate(
+                LayoutInflater.from(context),
+                parent,
+                false
+            )
+        } else {
+            ItemArticleBinding.bind(convertView)
+        }
+
+        val article = getItem(position) ?: return binding.root
 
         Glide.with(binding.articleImg)
-            .load(data.image)
-            .override(300, 300)
+            .load(article.image)
+            .override(150, 150)
             .centerCrop()
             .into(binding.articleImg)
 
-        binding.textTitle.text = data.title
-        binding.textDescription.text = data.description
+        binding.textTitle.text = article.title
+        binding.textDescription.text = article.description
 
-        view.setOnClickListener {
-            val i = Intent(context, BookmarkActivity::class.java)
-
-            i.putExtra("TITLE", data.title)
-            i.putExtra("CONTENT", data.content)
-
-            context.startActivity(i)
-        }
+        binding.articleLabels.removeAllViews()
 
         val categories = listOf("Resep", "Nutrisi", "Kebugaran")
-
         val selectedCategories = when (position) {
             0 -> listOf("Artikel", "Resep")
             1 -> listOf("Kebugaran")
-            else -> categories.shuffled().take((1..2).random())
+            else -> categories.take(2)
         }
-
-        binding.articleLabels.removeAllViews()
 
         selectedCategories.forEach { category ->
             val chip = Chip(context).apply {
                 text = category
                 isClickable = false
                 isCheckable = false
+                isCheckedIconVisible = false
 
-                chipBackgroundColor = ColorStateList.valueOf(
-                    Color.parseColor("#C6DABF")
-                )
-                chipStrokeColor = ColorStateList.valueOf(
-                    Color.parseColor("#114B5F")
-                )
-                chipStrokeWidth = context.resources.displayMetrics.density
+                chipBackgroundColor = ColorStateList.valueOf(lightGreen)
+                chipStrokeColor = ColorStateList.valueOf(blue)
+                chipStrokeWidth = resources.displayMetrics.density
+
+                setTextColor(blue)
+                textSize = 12f
+
                 shapeAppearanceModel = shapeAppearanceModel
                     .toBuilder()
                     .setAllCornerSizes(50f)
                     .build()
-
-                setTextColor(Color.parseColor("#114B5F"))
-                textSize = 12f
             }
 
             binding.articleLabels.addView(chip)
         }
 
-        return view
+        binding.root.setOnClickListener {
+            val intent = Intent(context, BookmarkActivity::class.java).apply {
+                putExtra("TITLE", article.title)
+                putExtra("CONTENT", article.content)
+            }
+            context.startActivity(intent)
+        }
+
+        return binding.root
     }
 }

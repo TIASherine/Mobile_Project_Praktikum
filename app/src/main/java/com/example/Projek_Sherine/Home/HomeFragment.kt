@@ -10,13 +10,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.example.Projek_Sherine.Articles.ArticlesActivity
+import com.example.Projek_Sherine.ArticleWebViewActivity
 import com.example.Projek_Sherine.Articles.ArticlesData
-import com.example.Projek_Sherine.P9.NinthActivity
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
 class HomeFragment : Fragment() {
@@ -51,26 +49,17 @@ class HomeFragment : Fragment() {
         Glide.with(this)
             .load(R.drawable.article1)
             .centerCrop()
-            .override(300, 300)
+            .override(150, 150)
             .into(binding.imgArtikel1)
 
         Glide.with(this)
             .load(R.drawable.article2)
             .centerCrop()
-            .override(300, 300)
+            .override(150, 150)
             .into(binding.imgArtikel2)
 
         binding.btnArticlesDetail.setOnClickListener {
-            MaterialAlertDialogBuilder(requireContext())
-                .setTitle("P9 Page")
-                .setMessage("Go See Page 9?")
-                .setNegativeButton("No", null)
-                .setPositiveButton("Yeah") { dialog, _ ->
-                    val intent = Intent(requireContext(), NinthActivity::class.java)
-                    startActivity(intent)
-
-                    dialog.dismiss()
-                }.setCancelable(false).show()
+            openArticlesPage(0)
         }
 
         val bookmarks = listOf(
@@ -78,16 +67,52 @@ class HomeFragment : Fragment() {
             binding.btnBookmark2
         )
 
-        bookmarks.forEach { bookmark ->
-            bookmark.setOnClickListener {
-                bookmark.isSelected = !bookmark.isSelected
 
-                bookmark.setImageResource(
-                    if (bookmark.isSelected) R.drawable.bookmark_filled
+        val homeArticleTitles = listOf(
+            "Resep Salad Sehat dan Praktis",
+            "Olahraga & Aktivitas Fisik"
+        )
+
+        val homeArticles = homeArticleTitles.mapNotNull { title ->
+            ArticlesData.articleList.find { it.title == title }
+        }
+
+        val bookmarkPrefs = requireContext().getSharedPreferences(
+            "article_bookmarks",
+            MODE_PRIVATE
+        )
+
+        val bookmarkButtons = listOf(
+            binding.btnBookmark,
+            binding.btnBookmark2
+        )
+
+        bookmarkButtons.forEachIndexed { index, button ->
+            val article = homeArticles.getOrNull(index) ?: return@forEachIndexed
+            val bookmarkKey = article.title
+
+            fun updateIcon() {
+                val isSaved = bookmarkPrefs.getBoolean(bookmarkKey, false)
+
+                button.setImageResource(
+                    if (isSaved) R.drawable.bookmark_filled
                     else R.drawable.bookmark
                 )
             }
+
+            updateIcon()
+
+            button.setOnClickListener {
+                val newState = !bookmarkPrefs.getBoolean(bookmarkKey, false)
+
+                bookmarkPrefs.edit()
+                    .putBoolean(bookmarkKey, newState)
+                    .apply()
+
+                updateIcon()
+            }
         }
+
 
         val detailButtons = listOf(
             binding.btnArticle1Detail,
@@ -96,12 +121,17 @@ class HomeFragment : Fragment() {
 
         detailButtons.forEachIndexed { index, button ->
             button.setOnClickListener {
-                val article = ArticlesData.articleList[index]
+                val article = homeArticles.getOrNull(index)
+                    ?: return@setOnClickListener
 
-                val intent = Intent(requireContext(), ArticlesActivity::class.java).apply {
-                    putExtra("SENDER", article.title)
-                    putExtra("MESSAGE", article.content)
+                val intent = Intent(
+                    requireContext(),
+                    ArticleWebViewActivity::class.java
+                ).apply {
+                    putExtra("ARTICLE_URL", article.url)
+                    putExtra("ARTICLE_TITLE", article.title)
                 }
+
                 startActivity(intent)
             }
         }

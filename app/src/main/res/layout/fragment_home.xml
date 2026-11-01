@@ -162,6 +162,7 @@
                             android:textSize="12sp"
                             app:backgroundTint="@color/lightGreen"
                             app:cornerRadius="12dp"
+                            app:layout_constraintEnd_toStartOf="@id/btnBookmark"
                             app:layout_constraintStart_toEndOf="@id/kategori1"
                             app:layout_constraintTop_toTopOf="parent"
                             app:strokeColor="@color/blue"
@@ -169,18 +170,34 @@
 
                         <TextView
                             android:id="@+id/txtJudulArtikel1"
-                            android:layout_width="200dp"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:layout_marginTop="4dp"
                             android:fontFamily="@font/nunito_bold"
-                            android:text="Nutrisi &amp; Menu Sehat"
+                            android:text="Resep Salad Sehat dan Praktis"
                             android:textColor="@color/blue"
                             android:textSize="14sp"
                             app:layout_constraintEnd_toStartOf="@id/btnBookmark"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toEndOf="@+id/imgArtikel1"
                             app:layout_constraintTop_toBottomOf="@id/kategori1" />
+
+                        <TextView
+                            android:id="@+id/txtDescArtikel1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/nunito_regular"
+                            android:text="Ide salad segar dan bergizi."
+                            android:textColor="@color/blue"
+                            android:textSize="12sp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            app:layout_constraintStart_toEndOf="@id/imgArtikel1"
+                            app:layout_constraintEnd_toStartOf="@id/btnArticle1Detail"
+                            app:layout_constraintTop_toBottomOf="@id/txtJudulArtikel1" />
 
                         <ImageView
                             android:id="@+id/btnBookmark"
@@ -264,7 +281,7 @@
 
                         <TextView
                             android:id="@+id/txtJudulArtikel2"
-                            android:layout_width="200dp"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
                             android:layout_marginTop="4dp"
@@ -276,6 +293,22 @@
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toEndOf="@+id/imgArtikel2"
                             app:layout_constraintTop_toBottomOf="@id/kategori3" />
+
+                        <TextView
+                            android:id="@+id/txtDescArtikel2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/nunito_regular"
+                            android:text="Manfaat olahraga untuk kebugaran."
+                            android:textColor="@color/blue"
+                            android:textSize="12sp"
+                            android:maxLines="2"
+                            android:ellipsize="end"
+                            app:layout_constraintStart_toEndOf="@id/imgArtikel2"
+                            app:layout_constraintEnd_toStartOf="@id/btnArticle2Detail"
+                            app:layout_constraintTop_toBottomOf="@id/txtJudulArtikel2" />
 
                         <ImageView
                             android:id="@+id/btnBookmark2"
