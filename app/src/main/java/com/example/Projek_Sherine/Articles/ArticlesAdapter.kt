@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import androidx.core.content.edit
 import androidx.core.graphics.toColorInt
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.Projek_Sherine.ArticleWebViewActivity
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.ItemArticleBinding
@@ -47,6 +48,8 @@ class ArticlesAdapter(
 
         Glide.with(binding.articleImg)
             .load(article.imageResId)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .skipMemoryCache(true)
             .override(150, 150)
             .centerCrop()
             .into(binding.articleImg)

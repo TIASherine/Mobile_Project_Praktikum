@@ -6,16 +6,4 @@
         android:icon="@drawable/logo_daily_fit"
         android:title="Logo"
         app:showAsAction="always" />
-
-    <!--    <item-->
-    <!--        android:id="@+id/action_search"-->
-    <!--        android:icon="@drawable/nav_more_selector"-->
-    <!--        android:title="Search"-->
-    <!--        app:showAsAction="never" />-->
-
-    <!--    <item-->
-    <!--        android:id="@+id/action_settings"-->
-    <!--        android:icon="@drawable/settings"-->
-    <!--        android:title="Setting"-->
-    <!--        app:showAsAction="never" />-->
     </menu>

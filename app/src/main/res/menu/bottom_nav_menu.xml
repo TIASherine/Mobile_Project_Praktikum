@@ -8,10 +8,6 @@
         android:id="@+id/action_articles"
         android:icon="@drawable/nav_more_selector"
         android:title="Articles" />
-    <!--    <item-->
-    <!--        android:id="@+id/action_more"-->
-    <!--        android:icon="@drawable/"-->
-    <!--        android:title="More" />-->
     <item
         android:id="@+id/action_bookmark"
         android:icon="@drawable/nav_article_selector"
