@@ -32,13 +32,13 @@ class BookmarkFragment : Fragment() {
         BookmarkModel(
             "Manfaat Olahraga",
             "Pentingnya aktivitas fisik untuk kesehatan.",
-            R.drawable.article3,
+            R.drawable.article4,
             "Olahraga secara rutin membantu menjaga kebugaran tubuh dan meningkatkan kesehatan secara keseluruhan."
         ),
         BookmarkModel(
             "Istirahat yang Cukup",
             "Tips menjaga kualitas tidur.",
-            R.drawable.article4,
+            R.drawable.article3,
             "Tidur yang cukup membantu tubuh beristirahat dan memulihkan energi setelah beraktivitas."
         ),
         BookmarkModel(

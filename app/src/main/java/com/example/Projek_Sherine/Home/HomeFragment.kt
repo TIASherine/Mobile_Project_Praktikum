@@ -7,11 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.example.Projek_Sherine.Articles.ArticlesActivity
+import com.example.Projek_Sherine.Articles.ArticlesData
 import com.example.Projek_Sherine.P9.NinthActivity
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.FragmentHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
@@ -87,19 +91,38 @@ class HomeFragment : Fragment() {
 
         val detailButtons = listOf(
             binding.btnArticle1Detail,
-            binding.btnArticle2Detail,
-            binding.btnArticle3Detail,
-            binding.btnArticle4Detail
+            binding.btnArticle2Detail
         )
 
-        detailButtons.forEach { button ->
+        detailButtons.forEachIndexed { index, button ->
             button.setOnClickListener {
-                requireActivity()
-                    .findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(
-                        R.id.bottom_nav_view
-                    )
-                    .selectedItemId = R.id.action_articles
+                val article = ArticlesData.articleList[index]
+
+                val intent = Intent(requireContext(), ArticlesActivity::class.java).apply {
+                    putExtra("SENDER", article.title)
+                    putExtra("MESSAGE", article.content)
+                }
+                startActivity(intent)
             }
         }
+
+        binding.btnArticle3Detail.setOnClickListener {
+            openArticlesPage(1)
+        }
+
+        binding.btnArticle4Detail.setOnClickListener {
+            openArticlesPage(2)
+        }
+    }
+
+    private fun openArticlesPage(page: Int) {
+        parentFragmentManager.setFragmentResult(
+            "open_articles_page",
+            bundleOf("page" to page)
+        )
+
+        requireActivity()
+            .findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+            .selectedItemId = R.id.action_articles
     }
 }

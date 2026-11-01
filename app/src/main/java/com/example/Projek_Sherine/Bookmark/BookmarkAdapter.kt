@@ -22,11 +22,12 @@ class BookmarkAdapter(
         val view = binding.root
         val data = articles[position]
 
-        Glide.with(context)
+        Glide.with(binding.articleImg)
             .load(data.image)
-            .centerCrop()
             .override(300, 300)
+            .centerCrop()
             .into(binding.articleImg)
+
         binding.textTitle.text = data.title
         binding.textDescription.text = data.description
 

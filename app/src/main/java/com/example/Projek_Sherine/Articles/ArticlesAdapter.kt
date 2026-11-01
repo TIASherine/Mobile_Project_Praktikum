@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.bumptech.glide.Glide
+import com.example.Projek_Sherine.ArticleWebViewActivity
 import com.example.Projek_Sherine.databinding.ItemArticleBinding
 import com.google.android.material.chip.Chip
 
@@ -22,13 +23,14 @@ class ArticlesAdapter(
         val view = binding.root
         val data = messages[position]
 
-        Glide.with(context)
+        Glide.with(binding.articleImg)
             .load(data.imageResId)
+            .override(300, 300)
+            .centerCrop()
             .into(binding.articleImg)
 
         binding.textTitle.text = data.title
         binding.textDescription.text = data.description
-        binding.articleImg.setImageResource(data.imageResId)
 
         val selectedCategories = data.categories
 
@@ -55,12 +57,16 @@ class ArticlesAdapter(
         }
 
         view.setOnClickListener {
-            val i = Intent(context, ArticlesActivity::class.java)
+            val url = ArticlesLink.urls[data.title]
 
-            i.putExtra("TITLE", data.title)
-            i.putExtra("CONTENT", data.content)
+            if (url != null) {
+                val intent = Intent(context, ArticleWebViewActivity::class.java).apply {
+                    putExtra("ARTICLE_URL", url)
+                    putExtra("ARTICLE_TITLE", data.title)
+                }
 
-            context.startActivity(i)
+                context.startActivity(intent)
+            }
         }
 
         return view

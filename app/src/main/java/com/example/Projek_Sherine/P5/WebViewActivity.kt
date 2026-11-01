@@ -36,6 +36,7 @@ class WebViewActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.outline_arrow_back)
         }
+
         binding.webView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
             if (scrollY > oldScrollY) {
                 binding.appBar.setExpanded(false, true) // sembunyikan
