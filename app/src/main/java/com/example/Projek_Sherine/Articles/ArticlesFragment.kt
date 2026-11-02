@@ -43,6 +43,10 @@ class ArticlesFragment : Fragment() {
             )
         }
 
+        binding.toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+
         val context = requireContext()
 
         val green = ContextCompat.getColor(context, R.color.green)
