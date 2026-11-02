@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.Projek_Sherine.ArticleWebViewActivity
 import com.example.Projek_Sherine.Articles.ArticlesData
 import com.example.Projek_Sherine.R
@@ -34,7 +35,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "- Beranda -"
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "- Home -"
         (requireActivity() as AppCompatActivity).supportActionBar?.subtitle =
             android.text.Html.fromHtml(
                 "<font color='#114B5F'>Stay </font><font color='#1A936F'>Healthy</font><font color='#114B5F'>, Feel </font><font color='#1A936F'> Happy</font>",
@@ -42,18 +43,20 @@ class HomeFragment : Fragment() {
             )
 
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
-
-        val displayUser = sharedPref.getString("username", "Sherine")
-        binding.txtWelcome.text = "Apa kabar, $displayUser?"
+//
+//        val displayUser = sharedPref.getString("username", "Sherine")
+//        binding.txtWelcome.text = "Apa kabar, $displayUser?"
 
         Glide.with(this)
             .load(R.drawable.article1)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
             .centerCrop()
             .override(150, 150)
             .into(binding.imgArtikel1)
 
         Glide.with(this)
             .load(R.drawable.article2)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
             .centerCrop()
             .override(150, 150)
             .into(binding.imgArtikel2)

@@ -10,18 +10,16 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/lightGreen"
+            android:background="@color/bgColour"
             app:navigationIcon="@drawable/outline_arrow_back"
-            app:titleTextColor="@color/blue"
-            app:subtitleTextColor="@color/blue" />
-
+            app:subtitleTextColor="@color/blue"
+            app:titleTextColor="@color/blue" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -29,8 +27,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:scrollbars="none"
         android:overScrollMode="never"
+        android:scrollbars="none"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -124,21 +122,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:scrollbars="none"
                 android:fillViewport="false"
-                app:layout_constraintTop_toBottomOf="@id/toolbarLine"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/toolbarLine">
 
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/chipGroupKategori"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="16dp"
-                    app:singleLine="true"
-                    app:singleSelection="true"
+                    app:chipSpacingHorizontal="6dp"
                     app:selectionRequired="true"
-                    app:chipSpacingHorizontal="6dp" />
+                    app:singleLine="true"
+                    app:singleSelection="true" />
 
             </HorizontalScrollView>
 
@@ -148,9 +146,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@id/chipScrollView"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/chipScrollView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
