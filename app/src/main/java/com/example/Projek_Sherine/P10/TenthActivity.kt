@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.ActivityTenthBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class TenthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTenthBinding
@@ -31,6 +33,46 @@ class TenthActivity : AppCompatActivity() {
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.outline_arrow_back)
         }
+
+        // 1. Inisialisasi adapter
+        val tabsAdapter = TenthTabsAdapter(this)
+
+        // 2. Pasang adapter ke ViewPager2
+        binding.viewPager.adapter = tabsAdapter
+
+        // 3. Hubungkan TabLayout dan ViewPager2
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+            when (position) {
+                0 -> {
+                    tab.text = "Tab A"
+                    // Tambah ikon
+                    tab.icon = ContextCompat.getDrawable(this, R.drawable.home)
+                    // Badge tanpa angka (hanya titik)
+                    val badge = tab.getOrCreateBadge()
+                    badge.isVisible = true
+                }
+
+                1 -> {
+                    tab.text = "Tab B"
+                    // Tambah ikon
+                    tab.icon = ContextCompat.getDrawable(this, R.drawable.bookmark)
+                    // Badge dengan angka
+                    val badge = tab.getOrCreateBadge()
+                    badge.isVisible = true
+                    badge.number = 5
+                }
+
+                2 -> {
+                    tab.text = "Tab C"
+                    // Tambah ikon
+                    tab.icon = ContextCompat.getDrawable(this, R.drawable.nutrition)
+                    // Badge dengan angka
+                    val badge = tab.getOrCreateBadge()
+                    badge.isVisible = true
+                    badge.number = 2
+                }
+            }
+        }.attach()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

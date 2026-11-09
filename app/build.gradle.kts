@@ -41,7 +41,6 @@ dependencies {
     implementation("androidx.viewpager2:viewpager2:1.1.0") // Tahap 5: ViewPager2
     implementation("com.tbuonomo:dotsindicator:5.1.0") // Tahap 6: DotsIndicator
     implementation("androidx.recyclerview:recyclerview:1.3.2") // Tahap 3 dan 4: RecyclerView
-    implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
