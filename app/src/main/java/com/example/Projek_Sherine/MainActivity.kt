@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.Projek_Sherine.P10.TenthActivity
 import com.example.Projek_Sherine.P5.LimaActivity
 import com.example.Projek_Sherine.P6.EnamActivity
 import com.example.Projek_Sherine.databinding.ActivityMainBinding
@@ -73,8 +74,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
         }
 
-        binding.btnBack.setOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
+        binding.btnP10.setOnClickListener {
+            startActivity(Intent(this, TenthActivity::class.java))
         }
     }
 }

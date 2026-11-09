@@ -19,8 +19,14 @@ class MoreFragment : Fragment() {
         "Dart", "Swift", "Go", "Ruby", "R",
         "PHP", "C#", "TypeScript", "Shell", "SQL",
         "Perl", "Rust", "Scala", "Haskell", "Lua",
-        "Erlang", "Prolog", "Assembly", "Objective-C", "VBA"
+        "Erlang", "Prolog", "Assembly", "Objective-C", "VBA",
+        "Satu shot ekstraksi pekat dengan cream tebal.",
+        "Espresso diencerkan air panas, ringan dan bersih.",
+        "Espresso, susu segar, dan gula aren yang legit.",
+        "Espresso dengan susu panas dan busa tebal.",
+        "Kopi pekat dengan susu kental manis di atas es.",
     )
+
 
     private val dataListWithDesc = listOf(
         mapOf("title" to "Kotlin", "desc" to "Bahasa untuk Android modern"),

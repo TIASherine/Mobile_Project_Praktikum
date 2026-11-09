@@ -123,11 +123,11 @@
             app:strokeColor="#E8D2E3" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnBack"
+            android:id="@+id/btnP10"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:fontFamily="@font/godofwar"
-            android:text="Kembali"
+            android:text="P10"
             app:backgroundTint="@color/button"
             app:cornerRadius="16dp"
             app:layout_columnWeight="1"
