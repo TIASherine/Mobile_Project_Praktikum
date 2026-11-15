@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
@@ -33,14 +32,14 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "- Home -"
-        (requireActivity() as AppCompatActivity).supportActionBar?.subtitle =
-            android.text.Html.fromHtml(
-                "<font color='#114B5F'>Stay </font><font color='#1A936F'>Healthy</font><font color='#114B5F'>, Feel </font><font color='#1A936F'> Happy</font>",
-                android.text.Html.FROM_HTML_MODE_COMPACT
-            )
+//
+//        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+//        (requireActivity() as AppCompatActivity).supportActionBar?.title = "- Home -"
+//        (requireActivity() as AppCompatActivity).supportActionBar?.subtitle =
+//            android.text.Html.fromHtml(
+//                "<font color='#114B5F'>Stay </font><font color='#1A936F'>Healthy</font><font color='#114B5F'>, Feel </font><font color='#1A936F'> Happy</font>",
+//                android.text.Html.FROM_HTML_MODE_COMPACT
+//            )
 
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
 //

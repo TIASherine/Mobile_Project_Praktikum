@@ -14,12 +14,12 @@ import com.example.Projek_Sherine.ArticleWebViewActivity
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.databinding.ItemArticleBinding
 import com.google.android.material.chip.Chip
+import com.google.android.material.snackbar.Snackbar
 
 class ArticlesAdapter(
     context: Context,
     private var articles: List<ArticlesModel>
 ) : RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>() {
-
     private val sharedPref = context.getSharedPreferences(
         "article_bookmarks",
         Context.MODE_PRIVATE
@@ -51,7 +51,6 @@ class ArticlesAdapter(
         val article = articles[position]
         val binding = holder.binding
 
-        // Gambar
         Glide.with(binding.articleImg)
             .load(article.imageResId)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
@@ -60,11 +59,9 @@ class ArticlesAdapter(
             .centerCrop()
             .into(binding.articleImg)
 
-        // Judul dan deskripsi
         binding.textTitle.text = article.title
         binding.textDescription.text = article.description
 
-        // Chip kategori
         binding.articleLabels.removeAllViews()
 
         article.categories.forEach { category ->
@@ -85,7 +82,6 @@ class ArticlesAdapter(
             binding.articleLabels.addView(chip)
         }
 
-        // Membuka WebView
         binding.btnArticleArrow.setOnClickListener {
             val context = binding.root.context
 
@@ -100,7 +96,6 @@ class ArticlesAdapter(
             context.startActivity(intent)
         }
 
-        // Bookmark
         val bookmarkKey = article.url
 
         fun updateBookmarkIcon() {
@@ -122,6 +117,19 @@ class ArticlesAdapter(
             }
 
             updateBookmarkIcon()
+
+            if (!isSaved) {
+                Snackbar.make(
+                    binding.root,
+                    "Artikel Tersimpan",
+                    Snackbar.LENGTH_LONG
+                ).setAction("BATAL") {
+                    sharedPref.edit {
+                        putBoolean(bookmarkKey, false)
+                    }
+                    updateBookmarkIcon()
+                }.show()
+            }
         }
     }
 

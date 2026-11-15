@@ -54,18 +54,11 @@ class BookmarkFragment : Fragment() {
             )
         }
 
-        // RecyclerView dengan adapter yang sama
         articlesAdapter = ArticlesAdapter(
             requireContext(),
             emptyList()
         )
 
-        binding.recyclerBookmarkItems.apply {
-            layoutManager = LinearLayoutManager(requireContext())
-            adapter = articlesAdapter
-        }
-
-        // Filter kategori Bookmark
         binding.chipGroupKategori.setOnCheckedStateChangeListener { group, _ ->
 
             for (i in 0 until group.childCount) {
@@ -103,19 +96,10 @@ class BookmarkFragment : Fragment() {
                         ArticlesData.kebugaranList
                 ).distinctBy { it.url }
 
-        // Tiga artikel contoh untuk demonstrasi
-        val defaultTitles = setOf(
-            "Resep Salad Sehat dan Praktis",
-            "Jus Mangga Yogurt",
-            "7 Gerakan Yoga untuk Pemula"
-        )
-
         val savedArticles = allArticles.filter { article ->
-            article.title in defaultTitles ||
-                    prefs.getBoolean(article.url, false)
+            prefs.getBoolean(article.url, false)
         }
 
-        // Filtering menurut kelompok konten
         val filteredArticles = when (
             binding.chipGroupKategori.checkedChipId
         ) {
@@ -135,6 +119,16 @@ class BookmarkFragment : Fragment() {
         }
 
         articlesAdapter.updateArticles(filteredArticles)
+
+        binding.recyclerArticles.apply {
+            // Mode Grid 2 kolom
+//            layoutManager = GridLayoutManager(requireContext(), 1)
+            // Jika ingin mode Linear:
+            layoutManager = LinearLayoutManager(requireContext())
+            // Linear tapi Horizontal
+//            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            adapter = articlesAdapter
+        }
     }
 
     override fun onResume() {
@@ -146,7 +140,7 @@ class BookmarkFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        binding.recyclerBookmarkItems.adapter = null
+        binding.recyclerArticles.adapter = null
         super.onDestroyView()
         _binding = null
     }
