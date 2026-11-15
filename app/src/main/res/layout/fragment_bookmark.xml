@@ -103,26 +103,19 @@
 
         </com.google.android.material.chip.ChipGroup>
 
-        <GridView
-            android:id="@+id/gridBookmarkItems"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerBookmarkItems"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginHorizontal="12dp"
             android:layout_marginTop="12dp"
             android:clipToPadding="false"
-            android:gravity="center"
-            android:horizontalSpacing="0dp"
-            android:numColumns="1"
-            android:paddingBottom="20dp"
+            android:paddingBottom="24dp"
             android:scrollbars="none"
-            android:stretchMode="columnWidth"
-            android:verticalSpacing="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.481"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/chipGroupKategori"
-            app:layout_constraintVertical_bias="0.128" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_article" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

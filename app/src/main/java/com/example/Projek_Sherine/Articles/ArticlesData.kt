@@ -3,8 +3,6 @@ package com.example.Projek_Sherine.Articles
 import com.example.Projek_Sherine.R
 
 object ArticlesData {
-
-
     val articleList = listOf(
         ArticlesModel(
             "Resep Salad Sehat dan Praktis",

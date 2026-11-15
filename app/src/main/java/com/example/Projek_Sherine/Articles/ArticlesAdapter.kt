@@ -4,11 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import androidx.core.content.edit
 import androidx.core.graphics.toColorInt
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.Projek_Sherine.ArticleWebViewActivity
@@ -18,8 +17,9 @@ import com.google.android.material.chip.Chip
 
 class ArticlesAdapter(
     context: Context,
-    articles: List<ArticlesModel>
-) : ArrayAdapter<ArticlesModel>(context, 0, articles) {
+    private var articles: List<ArticlesModel>
+) : RecyclerView.Adapter<ArticlesAdapter.ArticleViewHolder>() {
+
     private val sharedPref = context.getSharedPreferences(
         "article_bookmarks",
         Context.MODE_PRIVATE
@@ -28,24 +28,30 @@ class ArticlesAdapter(
     private val blue = "#114B5F".toColorInt()
     private val lightGreen = "#C6DABF".toColorInt()
 
-    override fun getView(
-        position: Int,
-        convertView: View?,
-        parent: ViewGroup
-    ): View {
+    inner class ArticleViewHolder(
+        val binding: ItemArticleBinding
+    ) : RecyclerView.ViewHolder(binding.root)
 
-        val binding = if (convertView == null) {
-            ItemArticleBinding.inflate(
-                LayoutInflater.from(context),
-                parent,
-                false
-            )
-        } else {
-            ItemArticleBinding.bind(convertView)
-        }
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): ArticleViewHolder {
+        val binding = ItemArticleBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
+        return ArticleViewHolder(binding)
+    }
 
-        val article = getItem(position) ?: return binding.root
+    override fun onBindViewHolder(
+        holder: ArticleViewHolder,
+        position: Int
+    ) {
+        val article = articles[position]
+        val binding = holder.binding
 
+        // Gambar
         Glide.with(binding.articleImg)
             .load(article.imageResId)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
@@ -54,13 +60,15 @@ class ArticlesAdapter(
             .centerCrop()
             .into(binding.articleImg)
 
+        // Judul dan deskripsi
         binding.textTitle.text = article.title
         binding.textDescription.text = article.description
 
+        // Chip kategori
         binding.articleLabels.removeAllViews()
 
         article.categories.forEach { category ->
-            val chip = Chip(context).apply {
+            val chip = Chip(binding.root.context).apply {
                 text = category
                 isClickable = false
                 isCheckable = false
@@ -77,7 +85,10 @@ class ArticlesAdapter(
             binding.articleLabels.addView(chip)
         }
 
+        // Membuka WebView
         binding.btnArticleArrow.setOnClickListener {
+            val context = binding.root.context
+
             val intent = Intent(
                 context,
                 ArticleWebViewActivity::class.java
@@ -89,12 +100,14 @@ class ArticlesAdapter(
             context.startActivity(intent)
         }
 
+        // Bookmark
         val bookmarkKey = article.url
-        var isBookmarked = sharedPref.getBoolean(bookmarkKey, false)
 
         fun updateBookmarkIcon() {
+            val isSaved = sharedPref.getBoolean(bookmarkKey, false)
+
             binding.btnArticleBookmark.setImageResource(
-                if (isBookmarked) R.drawable.bookmark_filled
+                if (isSaved) R.drawable.bookmark_filled
                 else R.drawable.bookmark
             )
         }
@@ -102,15 +115,20 @@ class ArticlesAdapter(
         updateBookmarkIcon()
 
         binding.btnArticleBookmark.setOnClickListener {
-            isBookmarked = !isBookmarked
+            val isSaved = sharedPref.getBoolean(bookmarkKey, false)
 
             sharedPref.edit {
-                putBoolean(bookmarkKey, isBookmarked)
+                putBoolean(bookmarkKey, !isSaved)
             }
 
             updateBookmarkIcon()
         }
+    }
 
-        return binding.root
+    override fun getItemCount(): Int = articles.size
+
+    fun updateArticles(newArticles: List<ArticlesModel>) {
+        articles = newArticles
+        notifyDataSetChanged()
     }
 }

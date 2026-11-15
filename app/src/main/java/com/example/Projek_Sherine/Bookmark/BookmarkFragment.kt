@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.toColorInt
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.Projek_Sherine.Articles.ArticlesAdapter
 import com.example.Projek_Sherine.Articles.ArticlesData
 import com.example.Projek_Sherine.R
@@ -16,19 +17,27 @@ import com.example.Projek_Sherine.databinding.FragmentBookmarkBinding
 import com.google.android.material.chip.Chip
 
 class BookmarkFragment : Fragment() {
+
     private var _binding: FragmentBookmarkBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var articlesAdapter: ArticlesAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentBookmarkBinding.inflate(inflater, container, false)
+        _binding = FragmentBookmarkBinding.inflate(
+            inflater, container, false
+        )
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?
+    ) {
         super.onViewCreated(view, savedInstanceState)
 
         val activity = requireActivity() as AppCompatActivity
@@ -45,7 +54,20 @@ class BookmarkFragment : Fragment() {
             )
         }
 
+        // RecyclerView dengan adapter yang sama
+        articlesAdapter = ArticlesAdapter(
+            requireContext(),
+            emptyList()
+        )
+
+        binding.recyclerBookmarkItems.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = articlesAdapter
+        }
+
+        // Filter kategori Bookmark
         binding.chipGroupKategori.setOnCheckedStateChangeListener { group, _ ->
+
             for (i in 0 until group.childCount) {
                 val chip = group.getChildAt(i) as Chip
 
@@ -66,6 +88,7 @@ class BookmarkFragment : Fragment() {
         }
 
         binding.chipGroupKategori.check(R.id.chipSemua)
+        displayBookmarks()
     }
 
     private fun displayBookmarks() {
@@ -78,20 +101,21 @@ class BookmarkFragment : Fragment() {
                 ArticlesData.articleList +
                         ArticlesData.resepList +
                         ArticlesData.kebugaranList
-                ).distinctBy { it.title }
+                ).distinctBy { it.url }
 
-        // Three default bookmarks for the demo
+        // Tiga artikel contoh untuk demonstrasi
         val defaultTitles = setOf(
             "Resep Salad Sehat dan Praktis",
-            "Olahraga & Aktivitas Fisik",
+            "Jus Mangga Yogurt",
             "7 Gerakan Yoga untuk Pemula"
         )
 
         val savedArticles = allArticles.filter { article ->
             article.title in defaultTitles ||
-                    prefs.getBoolean(article.title, false)
+                    prefs.getBoolean(article.url, false)
         }
 
+        // Filtering menurut kelompok konten
         val filteredArticles = when (
             binding.chipGroupKategori.checkedChipId
         ) {
@@ -110,20 +134,19 @@ class BookmarkFragment : Fragment() {
             else -> savedArticles
         }
 
-        binding.gridBookmarkItems.adapter = ArticlesAdapter(
-            requireContext(),
-            filteredArticles
-        )
+        articlesAdapter.updateArticles(filteredArticles)
     }
 
     override fun onResume() {
         super.onResume()
-        if (_binding != null) {
+
+        if (_binding != null && ::articlesAdapter.isInitialized) {
             displayBookmarks()
         }
     }
 
     override fun onDestroyView() {
+        binding.recyclerBookmarkItems.adapter = null
         super.onDestroyView()
         _binding = null
     }
