@@ -13,11 +13,11 @@
         android:icon="@drawable/nav_article_selector"
         android:title="Bookmark" />
     <item
-        android:id="@+id/action_profile"
-        android:icon="@drawable/outline_person_24"
-        android:title="Profile" />
-    <item
         android:id="@+id/action_notes"
         android:icon="@drawable/outline_note_stack_24"
         android:title="Notes" />
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/outline_person_24"
+        android:title="Profile" />
 </menu>

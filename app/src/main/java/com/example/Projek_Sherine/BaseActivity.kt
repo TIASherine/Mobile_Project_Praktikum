@@ -62,6 +62,11 @@ class BaseActivity : AppCompatActivity() {
                     true
                 }
 
+                R.id.action_notes -> {
+                    replaceFragment(NotesFragment())
+                    true
+                }
+
                 R.id.action_profile -> {
                     val options = arrayOf("Main", "Log Out")
 
@@ -89,11 +94,6 @@ class BaseActivity : AppCompatActivity() {
                             }
                         }
                         .show()
-                    true
-                }
-
-                R.id.action_notes -> {
-                    replaceFragment(NotesFragment())
                     true
                 }
 
