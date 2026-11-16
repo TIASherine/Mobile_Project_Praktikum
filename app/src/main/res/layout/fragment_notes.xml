@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgColour"
     tools:context=".Note.NotesFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/lightGreen"
+        android:background="@color/bgColour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="Note"
-        app:titleTextColor="@android:color/white" />
+        app:titleTextColor="@color/blue" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvNotes"
