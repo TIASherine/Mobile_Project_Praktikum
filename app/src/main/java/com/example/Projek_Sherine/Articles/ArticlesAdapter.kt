@@ -28,9 +28,8 @@ class ArticlesAdapter(
     private val blue = "#114B5F".toColorInt()
     private val lightGreen = "#C6DABF".toColorInt()
 
-    inner class ArticleViewHolder(
-        val binding: ItemArticleBinding
-    ) : RecyclerView.ViewHolder(binding.root)
+    inner class ArticleViewHolder(val binding: ItemArticleBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
