@@ -93,11 +93,12 @@
                         android:id="@+id/textInputEmail"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="290dp"
-                        android:layout_height="50dp"
+                        android:layout_height="55dp"
                         android:layout_marginHorizontal="35dp"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
                         android:hint="Email"
+                        app:boxBackgroundMode="none"
                         app:boxStrokeColor="@color/blue"
                         app:endIconMode="clear_text"
                         app:hintTextColor="@color/blue"
@@ -113,9 +114,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textEmailAddress" />
+
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
             </com.google.android.material.card.MaterialCardView>
 
             <Button
