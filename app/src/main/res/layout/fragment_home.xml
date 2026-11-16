@@ -7,7 +7,6 @@
     android:background="@color/bgColour"
     tools:context=".Home.HomeFragment">
 
-    <!-- Konten Home -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -24,7 +23,6 @@
             android:layout_height="wrap_content"
             android:paddingBottom="24dp">
 
-            <!-- Hero Card DailyFit -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardWelcome"
                 android:layout_width="0dp"
@@ -95,7 +93,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Artikel -->
             <TextView
                 android:id="@+id/txtArticle"
                 android:layout_width="wrap_content"
@@ -109,7 +106,6 @@
                 app:layout_constraintTop_toBottomOf="@id/cardWelcome"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <!-- Kartu Artikel 1 -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/Artikel1"
                 android:layout_width="0dp"
@@ -229,7 +225,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- Kartu Artikel 2 -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/Artikel2"
                 android:layout_width="0dp"
@@ -332,7 +327,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- Tombol Cek Selengkapnya -->
             <Button
                 android:id="@+id/btnArticlesDetail"
                 android:layout_width="wrap_content"
@@ -360,7 +354,6 @@
                 app:layout_constraintBottom_toBottomOf="@id/btnArticlesDetail"
                 app:layout_constraintEnd_toEndOf="@id/btnArticlesDetail" />
 
-            <!-- Resep -->
             <TextView
                 android:id="@+id/txtResep"
                 android:layout_width="wrap_content"
@@ -446,7 +439,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- Kebugaran -->
             <TextView
                 android:id="@+id/txtKebugaran"
                 android:layout_width="wrap_content"
