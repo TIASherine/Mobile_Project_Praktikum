@@ -32,24 +32,26 @@ class NotesFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.title = "Notes"
 
         db = AppDatabase.getInstance(requireContext())
-        adapter = NoteAdapter(notes) { note -> deleteNote(note) }
+        adapter = NoteAdapter(notes) { note ->
+            deleteNote(note)
+        }
+
+        binding.fabAddNote.setOnClickListener {
+            startActivity(Intent(requireContext(), NoteFormActivity::class.java))
+        }
 
         binding.rvNotes.layoutManager = LinearLayoutManager(requireContext())
         binding.rvNotes.adapter = adapter
+
         binding.rvNotes.addItemDecoration(
             DividerItemDecoration(
                 requireContext(), DividerItemDecoration.VERTICAL
             )
         )
-        binding.fabAddNote.setOnClickListener {
-            startActivity(Intent(requireContext(), NoteFormActivity::class.java))
-        }
     }
 
     override fun onResume() {
