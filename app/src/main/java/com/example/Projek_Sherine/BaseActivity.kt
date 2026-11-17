@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment
 import com.example.Projek_Sherine.Articles.ArticlesFragment
 import com.example.Projek_Sherine.Bookmark.BookmarkFragment
 import com.example.Projek_Sherine.Home.HomeFragment
-import com.example.Projek_Sherine.Note.NotesFragment
+//import com.example.Projek_Sherine.Note.NotesFragment
 import com.example.Projek_Sherine.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -62,10 +62,10 @@ class BaseActivity : AppCompatActivity() {
                     true
                 }
 
-                R.id.action_notes -> {
-                    replaceFragment(NotesFragment())
-                    true
-                }
+//                R.id.action_notes -> {
+//                    replaceFragment(NotesFragment())
+//                    true
+//                }
 
                 R.id.action_profile -> {
                     val options = arrayOf("Main", "Log Out")

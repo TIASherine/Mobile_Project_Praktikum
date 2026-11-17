@@ -7,12 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.lifecycleScope
 import com.example.Projek_Sherine.R
 import com.example.Projek_Sherine.data.AppDatabase
-import com.example.Projek_Sherine.data.Entity.NoteEntity
 import com.example.Projek_Sherine.databinding.ActivityNoteFormBinding
-import kotlinx.coroutines.launch
 
 class NoteFormActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNoteFormBinding
@@ -54,21 +51,21 @@ class NoteFormActivity : AppCompatActivity() {
 
             binding.btnSaveNote.isEnabled = false
 
-            lifecycleScope.launch {
-                try {
-                    db.noteDao().insert(
-                        NoteEntity(title = title, content = content)
-                    )
-                    finish()
-                } catch (e: Exception) {
-                    binding.btnSaveNote.isEnabled = true
-                    Toast.makeText(
-                        this@NoteFormActivity,
-                        "Gagal menyimpan catatan",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            }
+//            lifecycleScope.launch {
+//                try {
+//                    db.noteDao().insert(
+//                        NoteEntity(title = title, content = content)
+//                    )
+//                    finish()
+//                } catch (e: Exception) {
+//                    binding.btnSaveNote.isEnabled = true
+//                    Toast.makeText(
+//                        this@NoteFormActivity,
+//                        "Gagal menyimpan catatan",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+//                }
+//            }
         }
     }
 
